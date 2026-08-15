@@ -2,6 +2,8 @@
 
 Status: Approved baseline
 
+Parent Epic: EPIC-001
+Related ADR: ADR-001, ADR-006
 
 Portfolio shows code, name, client, type, status, original/adjusted contract, work progress, claim/cert progress, AR exposure and forecast health.
 

@@ -2,6 +2,8 @@
 
 Status: Approved baseline
 
+Parent Epic: EPIC-002
+Related ADR: ADR-002, ADR-003
 
 Support Main Contract, VO, Omission, Adjustment, revised customer PO, backcharge/contra where relevant.
 

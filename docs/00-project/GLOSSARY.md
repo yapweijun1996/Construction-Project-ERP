@@ -8,8 +8,8 @@
 | Omission | Removed contract scope/value |
 | Work Done | Cumulative measured entitlement |
 | Current Claim | This-period incremental movement |
-| PCAR | Progress Claim (AR) |
-| CCAR | Certified Claim (AR) |
+| PCAR | Progress Claim |
+| CCAR | Certified Claim |
 | Retention | Contractual retained amount |
 | On Hold | Temporarily withheld amount |
 | DO | Delivery Order; relevant to physical fulfilment |

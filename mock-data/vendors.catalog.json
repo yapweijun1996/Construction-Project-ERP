@@ -1,0 +1,590 @@
+[
+  {
+    "id": "v-001",
+    "name": "Straits Concrete Supply (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-002",
+    "name": "Lion Rebar & Steel (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-003",
+    "name": "Meridian Aggregates (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-004",
+    "name": "Harbourview Precast (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-005",
+    "name": "Vertex Formwork Systems (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-006",
+    "name": "Northbridge Aluminium (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-007",
+    "name": "Summit Glass & Glazing (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-008",
+    "name": "Eastline Ceilings (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-009",
+    "name": "Pioneer Partition Systems (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-010",
+    "name": "Orchid Tiles & Stone (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-011",
+    "name": "GreenArc Timber Supplies (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-012",
+    "name": "CivicPoint Doors & Hardware (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-013",
+    "name": "Westgate Waterproofing (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-014",
+    "name": "TidalWorks Paints & Coatings (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-015",
+    "name": "CoreAxis Flooring Systems (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-016",
+    "name": "Skyline Scaffolding (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-017",
+    "name": "NovaLife Safety Equipment (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-018",
+    "name": "AeroWorks Crane & Hoist (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-019",
+    "name": "Lioncrest Electrical Wholesale (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-020",
+    "name": "Island Electrical Wholesale (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-021",
+    "name": "Summit LV & Cables (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-022",
+    "name": "Eastline Switchgear (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-023",
+    "name": "Pioneer Lighting Solutions (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-024",
+    "name": "Harbourview HVAC Equipment (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-025",
+    "name": "GreenArc Air Conditioning (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-026",
+    "name": "Vertex Plumbing & Sanitary (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-027",
+    "name": "Northbridge Fire Protection (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-028",
+    "name": "Orchid Lifts & Escalators (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-029",
+    "name": "Meridian Insulation (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-030",
+    "name": "Lion Metal Works (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-031",
+    "name": "TidalWorks Steel Fabrication (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-032",
+    "name": "CoreAxis Precast Elements (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-033",
+    "name": "Westgate Aggregates (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-034",
+    "name": "CivicPoint Ready-Mix (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-035",
+    "name": "Skyline Tower Cranes (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-036",
+    "name": "NovaLife Temporary Works (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-037",
+    "name": "AeroWorks Site Accommodation (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-038",
+    "name": "Lioncrest Generators (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-039",
+    "name": "Island Dewatering Systems (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-040",
+    "name": "Summit Testing & Instrumentation (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-041",
+    "name": "Eastline CCTV & Security (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-042",
+    "name": "Pioneer Data Cabling (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-043",
+    "name": "Harbourview Modular Units (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-044",
+    "name": "GreenArc Solar Panels (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-045",
+    "name": "Vertex Structural Steel (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-046",
+    "name": "Northbridge Insulated Panels (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-047",
+    "name": "Orchid Architectural Metal (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-048",
+    "name": "Meridian Epoxy Flooring (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-049",
+    "name": "Lion Traffic & Road Works (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-050",
+    "name": "TidalWorks Landscape Materials (Demo) Pte. Ltd.",
+    "type": "supplier",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-051",
+    "name": "Vertex M&E Contractors (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-052",
+    "name": "Northbridge Electrical Services (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-053",
+    "name": "Summit ACMV Works (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-054",
+    "name": "Eastline Plumbing Services (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-055",
+    "name": "Pioneer Fire Services (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-056",
+    "name": "Orchid Facade Works (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-057",
+    "name": "GreenArc Roofing Specialists (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-058",
+    "name": "CivicPoint Demolition (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-059",
+    "name": "Westgate Excavation & Earthworks (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-060",
+    "name": "TidalWorks Piling (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-061",
+    "name": "CoreAxis Structural Works (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-062",
+    "name": "Skyline Interior Fit-Out (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-063",
+    "name": "NovaLife Cleanroom Builders (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-064",
+    "name": "AeroWorks BMS & Controls (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-065",
+    "name": "Lioncrest Security Systems (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-066",
+    "name": "Island Roadworks & Drainage (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-067",
+    "name": "Meridian Joinery (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-068",
+    "name": "Lion Painting & Finishing (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-069",
+    "name": "Harbourview Landscaping (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-070",
+    "name": "Vertex Lift Installation (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-071",
+    "name": "Northbridge Data Hall Fit-Out (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-072",
+    "name": "Summit Waterproofing Works (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-073",
+    "name": "Eastline Gas & Process Piping (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-074",
+    "name": "Pioneer Clean Utility Services (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-075",
+    "name": "Orchid Curtain Wall (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-076",
+    "name": "GreenArc Sustainable Retrofits (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-077",
+    "name": "CivicPoint Signage & Branding (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-078",
+    "name": "Westgate Cold Room Builders (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-079",
+    "name": "TidalWorks Scaffold & Access (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-080",
+    "name": "CoreAxis Rebar Fixing (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-081",
+    "name": "Skyline Steel Erection (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-082",
+    "name": "NovaLife Lab Fit-Out (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-083",
+    "name": "AeroWorks Generator Installation (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  },
+  {
+    "id": "v-084",
+    "name": "Lioncrest Concrete Repair (Demo) Pte. Ltd.",
+    "type": "subcontractor",
+    "fictional": true,
+    "country": "Singapore"
+  }
+]

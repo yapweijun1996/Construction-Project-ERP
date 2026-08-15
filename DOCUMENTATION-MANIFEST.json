@@ -3,10 +3,12 @@
   "packageVersion": "0.0.1-docs",
   "createdDate": "2026-08-15",
   "purpose": "AI-agent-ready documentation and Singapore mock-data blueprint",
-  "fileCount": 74,
+  "fileCount": 77,
   "files": [
+    ".gitattributes",
     "AGENTS.md",
     "CHANGELOG.md",
+    "DOCUMENTATION-MANIFEST.json",
     "README.md",
     "START-HERE-AI-AGENT.md",
     "docs/00-project/DOCUMENTATION-GOVERNANCE.md",
@@ -78,6 +80,7 @@
     "mock-data/README.md",
     "mock-data/clients.catalog.json",
     "mock-data/projects.catalog.json",
-    "mock-data/seed-config.example.json"
+    "mock-data/seed-config.example.json",
+    "mock-data/vendors.catalog.json"
   ]
 }

@@ -2,6 +2,7 @@
 
 Status: Approved baseline
 
+Parent Epic: EPIC-006
 
 Show Original/Revised Budget, Committed, Actual, Forecast Final Cost, Cost To Complete, variance, recognized revenue, gross profit, margin and cost-based POC.
 

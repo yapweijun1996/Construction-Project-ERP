@@ -2,6 +2,8 @@
 
 Status: Approved baseline
 
+Parent Epic: EPIC-003
+Related ADR: ADR-004, ADR-005
 
 Wizard: Prelim → Work Done → Adjustments → Review → Submit.
 

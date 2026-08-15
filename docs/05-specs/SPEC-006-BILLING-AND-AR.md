@@ -2,6 +2,8 @@
 
 Status: Approved baseline
 
+Parent Epic: EPIC-004
+Related ADR: ADR-005, ADR-008
 
 Flow: CCAR → AR Document → Receipt/Credit Allocation → Settlement.
 

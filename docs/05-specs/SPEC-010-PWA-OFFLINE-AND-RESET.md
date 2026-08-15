@@ -2,6 +2,8 @@
 
 Status: Approved baseline
 
+Parent Epic: EPIC-001
+Related ADR: ADR-006, ADR-007
 
 Installable static PWA; offline after warm load; user-controlled SW update; iOS safe-area support.
 

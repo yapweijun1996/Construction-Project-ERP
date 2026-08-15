@@ -2,6 +2,8 @@
 
 Status: Approved baseline
 
+Parent Epic: EPIC-005
+Related ADR: ADR-005
 
 Subcontract Award → Subcon Claim → QS Verification → Subcon Certificate → AP/Payment.
 
