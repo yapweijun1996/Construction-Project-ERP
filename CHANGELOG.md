@@ -24,6 +24,7 @@
 - TASK-012: documents & closeout — document register with category filter and revisions, retention release status, defect list for DLP, final account and lifecycle closeout notes.
 - TASK-013: PWA offline & update UX — user-controlled service-worker update prompt (never auto-reloads), offline awareness banner, settings dialog with seed identity and two-step demo-data reset that recreates the byte-identical baseline.
 - TASK-014: demo data integrity suite — 40+ programmatic checks (ids/FKs/reconciliations/chain/allocation/cost-POC/hero/retention) with breakage-injection tests and a Settings integrity runner.
+- TASK-015: public demo QA & release — security scan clean, npm audit 0 vulnerabilities, release QA (SW offline warm-load, manifest, three viewports, axe 0), GitHub Pages workflow, tablet overflow fix.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).

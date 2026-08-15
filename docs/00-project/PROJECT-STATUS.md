@@ -2,7 +2,7 @@
 
 Updated: 2026-08-15
 
-Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
+Current phase: **Phase 1 — Project Portfolio & Workspace** (all TASKs done)
 
 ## Established
 - Name: Construction Project ERP
@@ -24,6 +24,8 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - Documents & closeout (TASK-012): document register, retention release, defects and final account views (171/171 tests)
 - PWA offline & update UX (TASK-013): user-controlled SW updates, offline banner, seed-aware demo reset (181/181 tests)
 - Demo data integrity suite (TASK-014): 40+ programmatic checks with breakage-injection tests and Settings runner (191/191 tests)
+- Public demo QA & release (TASK-015): security scan, npm audit, offline warm-load verified on production build, GitHub Pages workflow deployed (191/191 tests)
 
 ## Next
-1. TASK-015 Public demo QA & GitHub Pages release
+- Phase 2 (contract VO/adjustment interactions) — see ROADMAP.md
+- Optional cloud/API/MCP/AI expansion (Phase 10)
