@@ -20,8 +20,6 @@ import type {
   Certification,
   ClaimHeader,
   ClaimLine,
-  CommercialChange,
-  Contract,
   CostTransaction,
   DocumentRecord,
   Party,
@@ -33,12 +31,12 @@ import type {
   Retention,
   Subcontract,
   SubcontractClaim,
-  WorkPackage,
 } from '../types'
 import { parseSeedConfig, requiredTargets, type SeedConfig } from './config'
-import { streamRng } from './prng'
+import { Random, streamRng } from './prng'
+import { generateCommercial } from './generators/contracts'
 
-export const ENGINE_VERSION = '0.1.0'
+export const ENGINE_VERSION = '0.2.0'
 
 export interface RawClient {
   id: string
@@ -150,9 +148,6 @@ export function materializeProjects(stories: RawProjectStory[]): Project[] {
 }
 
 const EMPTY_LISTS = {
-  contracts: [] as Contract[],
-  workPackages: [] as WorkPackage[],
-  commercialChanges: [] as CommercialChange[],
   progressMeasurements: [] as ProgressMeasurement[],
   claimHeaders: [] as ClaimHeader[],
   claimLines: [] as ClaimLine[],
@@ -173,12 +168,16 @@ const EMPTY_LISTS = {
 export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): BaselineDataset {
   const config = parseSeedConfig(rawConfig)
   validateCatalogs(config, catalogs)
-  // Reserved for stage streams; ensures the baseline stream is used
-  // consistently from the very first build.
-  streamRng(config.seedVersion, config.seed, 'baseline')
 
   const parties = assembleParties(catalogs)
   const projects = materializeProjects(catalogs.projects)
+
+  // Stage streams keep each generator's draws independent (DEMO-DATA-ENGINE.md).
+  const commercial = generateCommercial(
+    config,
+    projects,
+    new Random(streamRng(config.seedVersion, config.seed, 'commercial')),
+  )
 
   return {
     meta: {
@@ -188,6 +187,9 @@ export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): B
     },
     parties,
     projects,
+    contracts: commercial.contracts,
+    workPackages: commercial.workPackages,
+    commercialChanges: commercial.commercialChanges,
     ...EMPTY_LISTS,
   }
 }

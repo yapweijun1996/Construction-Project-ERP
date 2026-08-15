@@ -51,10 +51,16 @@ describe('generateBaseline', () => {
 
   it('keeps transaction lists empty until later tasks fill them', () => {
     const ds = build()
-    expect(ds.contracts).toEqual([])
     expect(ds.claimHeaders).toEqual([])
     expect(ds.costTransactions).toEqual([])
     expect(ds.auditEvents).toEqual([])
+  })
+
+  it('generates contracts, work packages and commercial changes', () => {
+    const ds = build()
+    expect(ds.contracts).toHaveLength(30)
+    expect(ds.workPackages.length).toBeGreaterThan(0)
+    expect(ds.commercialChanges.length).toBeGreaterThan(0)
   })
 
   it('round-trips through serialization', () => {
