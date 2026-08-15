@@ -53,10 +53,19 @@ for (const vp of viewports) {
     await page.waitForTimeout(300)
     const progressBars = await page.locator('progress').count()
     const progressTables = await page.locator('.register-table').count()
-    await page.getByRole('button', { name: /back to portfolio/i }).count().catch(() => 0)
+    // claims wizard (TASK-007)
+    await page.locator('.app-sidebar a[href="#client-claims"]').click()
+    await page.waitForTimeout(300)
+    const pcarRows = await page.locator('.register-table tbody tr').count()
+    await page.locator('.register-table .row-link').first().click()
+    await page.waitForTimeout(200)
+    const stepperSteps = await page.locator('.stepper button').count()
+    await page.locator('.stepper button').nth(3).click()
+    await page.waitForTimeout(150)
+    const reviewFields = await page.locator('.contract-summary .kpi-card').count()
     await page.locator('.app-sidebar a[href="#overview"]').click()
     await page.waitForTimeout(200)
-    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow

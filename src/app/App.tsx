@@ -5,6 +5,7 @@ import SectionPlaceholder from '../features/SectionPlaceholder'
 import PortfolioView from '../features/portfolio/PortfolioView'
 import ContractCommercialView from '../features/contracts/ContractCommercialView'
 import ProgressView from '../features/progress/ProgressView'
+import ClaimsView from '../features/claims/ClaimsView'
 
 function readHashSection(): string {
   const raw = window.location.hash.replace(/^#\/?/, '')
@@ -30,6 +31,9 @@ export default function App() {
     }
     if (active.id === 'progress' && currentProjectId) {
       return <ProgressView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    if (active.id === 'client-claims' && currentProjectId) {
+      return <ClaimsView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
     }
     return <SectionPlaceholder section={active} projectId={currentProjectId ?? undefined} />
   })()

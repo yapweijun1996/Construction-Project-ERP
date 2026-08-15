@@ -557,6 +557,71 @@ progress[value]::-moz-progress-bar {
   border-radius: 999px;
 }
 
+.row-negative td {
+  background: var(--status-credit-bg);
+}
+.claim-period {
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.stepper ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+}
+.stepper li {
+  display: flex;
+}
+.stepper button {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+.stepper li.step-active button {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+}
+.stepper li.step-done button {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.stepper-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+.step-button {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+.step-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.summary-negative {
+  border: 2px solid var(--status-credit-fg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+}
+.summary-negative .kpi-card {
+  border-color: transparent;
+}
+
 /* ---- reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -16,8 +16,9 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - Portfolio & workspace UI (TASK-004): filterable 30-project table and per-project workspace with 14 domain-computed KPIs (124/124 tests, axe-clean)
 - Contract & variation register (TASK-005): main contract summary, commercial changes and work packages with explicit DO/measurement evidence (130/130 tests)
 - Progress measurement model (TASK-006): monthly plan/actual measurements with progress bars and latest WP progress (135/135 tests)
+- PCAR wizard (TASK-007): five-step claim review with SPEC-004 summary and negative-claim highlighting (141/141 tests)
 
 ## Next
-1. TASK-007 PCAR wizard
-2. TASK-008 CCAR certification
+1. TASK-008 CCAR certification
+2. TASK-009 Billing & AR credit flow
 3. TASK-014 Demo data integrity test suite

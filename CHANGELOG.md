@@ -16,6 +16,7 @@
 - TASK-004: portfolio & workspace — filterable 30-project portfolio table (status/year/type/client/scenario/value band) and per-project workspace with 14 domain-computed KPIs; axe-clean responsive rendering.
 - TASK-005: contract & variation register — main contract summary, commercial change register (VO/Omission/Adjustment/Revised PO/Backcharge with signed values) and work-package register with explicit DO Required vs Progress Measurement evidence; app-level project context.
 - TASK-006: progress measurement model — plan/actual monthly measurements with accessible progress bars, latest work-package progress from claim lines, sign-aware monthly movement.
+- TASK-007: PCAR wizard — five-step read-only claim review (Prelim/Work Done/Adjustments/Review/Submit) with SPEC-004 summary fields, work lines with prior/current % and movement, negative-claim highlighting and AR credit intent note.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).
