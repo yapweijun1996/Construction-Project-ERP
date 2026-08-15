@@ -18,8 +18,9 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - Progress measurement model (TASK-006): monthly plan/actual measurements with progress bars and latest WP progress (135/135 tests)
 - PCAR wizard (TASK-007): five-step claim review with SPEC-004 summary and negative-claim highlighting (141/141 tests)
 - CCAR certification (TASK-008): submitted vs certified with holds, remarks and negative-certification AR credit intent (147/147 tests)
+- Billing & AR credit flow (TASK-009): invoices, credit notes, receipts and allocations with settlement statuses (153/153 tests)
 
 ## Next
-1. TASK-009 Billing & AR credit flow
-2. TASK-010 Procurement & subcontract demo
+1. TASK-010 Procurement & subcontract demo
+2. TASK-011 Cost & POC dashboard
 3. TASK-014 Demo data integrity test suite

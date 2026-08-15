@@ -7,6 +7,7 @@ import ContractCommercialView from '../features/contracts/ContractCommercialView
 import ProgressView from '../features/progress/ProgressView'
 import ClaimsView from '../features/claims/ClaimsView'
 import CertificationView from '../features/certification/CertificationView'
+import BillingArView from '../features/billing/BillingArView'
 
 function readHashSection(): string {
   const raw = window.location.hash.replace(/^#\/?/, '')
@@ -38,6 +39,9 @@ export default function App() {
     }
     if (active.id === 'certification' && currentProjectId) {
       return <CertificationView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    if (active.id === 'billing-ar' && currentProjectId) {
+      return <BillingArView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
     }
     return <SectionPlaceholder section={active} projectId={currentProjectId ?? undefined} />
   })()
