@@ -10,6 +10,7 @@
 - TASK-001: Vite + React + TypeScript static PWA scaffold — responsive app shell (desktop/tablet/mobile), WCAG AA design tokens, business status vocabulary, Vitest setup, offline-capable build.
 - TASK-002: deterministic seed engine — mulberry32 PRNG with derived per-stage streams, fail-closed seed-config validation, domain entity types, catalog materialisation (102 parties, 30 projects) and canonical baseline serialisation.
 - TASK-003 (Part 1): commercial scope generation — 30 main contracts, work packages (SPEC-001 target band) with exact value reconciliation, and commercial changes (VO/Omission/Adjustment/Revised PO/Backcharge) honouring ADR-003 DO rules.
+- TASK-003 (Part 2): progress measurements, PCAR and CCAR generation — Current Claim ≠ Cumulative Entitlement arithmetic, cumulative certification with negative-certification write-downs (ADR-008), retention/advance-recovery explicit fields, certification gaps, GST 7/8/9 by claim year.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).

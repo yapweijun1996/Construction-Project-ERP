@@ -17,14 +17,10 @@ import type {
   ArDocument,
   AuditEvent,
   BaselineDataset,
-  Certification,
-  ClaimHeader,
-  ClaimLine,
   CostTransaction,
   DocumentRecord,
   Party,
   PocSnapshot,
-  ProgressMeasurement,
   Project,
   PurchaseOrder,
   Receipt,
@@ -35,8 +31,9 @@ import type {
 import { parseSeedConfig, requiredTargets, type SeedConfig } from './config'
 import { Random, streamRng } from './prng'
 import { generateCommercial } from './generators/contracts'
+import { generateClaims } from './generators/claims'
 
-export const ENGINE_VERSION = '0.2.0'
+export const ENGINE_VERSION = '0.3.0'
 
 export interface RawClient {
   id: string
@@ -148,10 +145,6 @@ export function materializeProjects(stories: RawProjectStory[]): Project[] {
 }
 
 const EMPTY_LISTS = {
-  progressMeasurements: [] as ProgressMeasurement[],
-  claimHeaders: [] as ClaimHeader[],
-  claimLines: [] as ClaimLine[],
-  certifications: [] as Certification[],
   arDocuments: [] as ArDocument[],
   receipts: [] as Receipt[],
   allocations: [] as Allocation[],
@@ -178,6 +171,15 @@ export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): B
     projects,
     new Random(streamRng(config.seedVersion, config.seed, 'commercial')),
   )
+  const claims = generateClaims(
+    config,
+    projects,
+    commercial.contracts,
+    commercial.workPackages,
+    new Random(streamRng(config.seedVersion, config.seed, 'progress')),
+    new Random(streamRng(config.seedVersion, config.seed, 'pcar')),
+    new Random(streamRng(config.seedVersion, config.seed, 'ccar')),
+  )
 
   return {
     meta: {
@@ -190,6 +192,10 @@ export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): B
     contracts: commercial.contracts,
     workPackages: commercial.workPackages,
     commercialChanges: commercial.commercialChanges,
+    progressMeasurements: claims.progressMeasurements,
+    claimHeaders: claims.claimHeaders,
+    claimLines: claims.claimLines,
+    certifications: claims.certifications,
     ...EMPTY_LISTS,
   }
 }

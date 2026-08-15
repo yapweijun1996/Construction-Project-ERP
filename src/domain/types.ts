@@ -90,6 +90,8 @@ export interface ProgressMeasurement {
   period: Period
   measuredAt: IsoDate
   cumulativePct: number
+  /** 'plan' (month-open target) or 'actual' (month-end assessed) */
+  kind: 'plan' | 'actual'
 }
 
 export interface ClaimHeader {
@@ -104,6 +106,10 @@ export interface ClaimHeader {
   gstRatePct: number
   gst: number
   total: number
+  /** Explicit per BR-CLAIM-005: retention and advance recovery are first-class fields. */
+  retentionPct: number
+  retentionAmount: number
+  advanceRecovery: number
 }
 
 export interface ClaimLine {

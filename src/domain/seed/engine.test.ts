@@ -49,9 +49,9 @@ describe('generateBaseline', () => {
     }
   })
 
-  it('keeps transaction lists empty until later tasks fill them', () => {
+  it('keeps later transaction lists empty until their tasks fill them', () => {
     const ds = build()
-    expect(ds.claimHeaders).toEqual([])
+    expect(ds.arDocuments).toEqual([])
     expect(ds.costTransactions).toEqual([])
     expect(ds.auditEvents).toEqual([])
   })
