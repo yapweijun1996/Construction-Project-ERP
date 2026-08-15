@@ -7,6 +7,7 @@
 - Project-first construction domain model.
 - Singapore five-year mock dataset blueprint.
 - Initial EPIC/SPEC/ADR/TASK backlog.
+- TASK-001: Vite + React + TypeScript static PWA scaffold — responsive app shell (desktop/tablet/mobile), WCAG AA design tokens, business status vocabulary, Vitest setup, offline-capable build.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).

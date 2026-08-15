@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dev-dist/
+coverage/
+spike/
+*.local
+*.tsbuildinfo
+.DS_Store
+npm-debug.log*

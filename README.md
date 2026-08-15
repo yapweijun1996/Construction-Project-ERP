@@ -2,7 +2,7 @@
 
 **Interactive static PWA demo for project-based construction ERP workflows.**
 
-Status: Documentation / Build Handoff  
+Status: App scaffold live (TASK-001 done)  
 Updated: 2026-08-15
 
 ## Product Idea
@@ -26,6 +26,10 @@ Baseline v1 must include:
 - Deterministic one-click reset
 
 See `docs/05-specs/SPEC-001-SINGAPORE-DEMO-DATASET.md`.
+
+## Develop
+
+Requires Node >= 20. `npm install`, `npm run dev`, `npm run build`, `npm run test`. See `docs/09-operations/DEVELOPMENT.md`.
 
 ## Recommended Demo Stack
 
