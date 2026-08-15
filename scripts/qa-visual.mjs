@@ -84,9 +84,15 @@ for (const vp of viewports) {
     await page.locator('.register-table .row-link').first().click()
     await page.waitForTimeout(200)
     const subclaimRows = await page.locator('.register-table tbody tr').count()
+    // cost & POC (TASK-011)
+    await page.locator('.app-sidebar a[href="#cost-poc"]').click()
+    await page.waitForTimeout(300)
+    const costCards = await page.locator('.kpi-grid .kpi-card').count()
+    const measureCards = await page.locator('.contract-summary .kpi-card').count()
+    const pocTrendRows = await page.locator('.register-table tbody tr').count()
     await page.locator('.app-sidebar a[href="#overview"]').click()
     await page.waitForTimeout(200)
-    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, subcontractRows, subclaimRows, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, subcontractRows, subclaimRows, costCards, measureCards, pocTrendRows, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow

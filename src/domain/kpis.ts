@@ -29,6 +29,18 @@ export interface ProjectKpis {
   poc: number
   /** Forecast margin = (adjusted - forecast) / adjusted. */
   marginPct: number
+  /** Committed = sum of purchase/subcontract orders (SPEC-008). */
+  committed: number
+  /** Revised budget follows approved commercial changes. */
+  revisedBudget: number
+  /** Forecast final cost minus actual to date. */
+  costToComplete: number
+  /** Revised budget minus forecast final cost (negative = overrun). */
+  variance: number
+  /** Cost-based recognised revenue = adjusted contract × POC. */
+  recognizedRevenue: number
+  /** Forecast gross profit = adjusted - forecast. */
+  grossProfit: number
 }
 
 const round2 = (v: number): number => Math.round(v * 100) / 100 + 0
@@ -60,10 +72,16 @@ export function computeProjectKpis(ds: BaselineDataset, project: Project): Proje
 
   const budget = originalContract
   const actual = round2(costs.reduce((a, t) => a + t.amount, 0))
+  const committed = round2(ds.purchaseOrders.filter((po) => po.projectId === project.id).reduce((a, po) => a + po.amount, 0))
   const latestSnap = snaps.length > 0 ? snaps.reduce((a, b) => (a.period > b.period ? a : b)) : undefined
   const forecast = latestSnap ? latestSnap.forecastFinalCost : round2(originalContract)
   const poc = latestSnap ? latestSnap.costPocPct : 0
   const marginPct = adjustedContract > 0 ? round2(((adjustedContract - forecast) / adjustedContract) * 100) : 0
+  const revisedBudget = adjustedContract
+  const costToComplete = round2(forecast - actual)
+  const variance = round2(revisedBudget - forecast)
+  const recognizedRevenue = round2((adjustedContract * poc) / 100)
+  const grossProfit = round2(adjustedContract - forecast)
 
   return {
     projectId: project.id,
@@ -82,6 +100,12 @@ export function computeProjectKpis(ds: BaselineDataset, project: Project): Proje
     forecast,
     poc,
     marginPct,
+    committed,
+    revisedBudget: round2(revisedBudget),
+    costToComplete,
+    variance,
+    recognizedRevenue,
+    grossProfit,
   }
 }
 

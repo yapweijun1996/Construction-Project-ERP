@@ -1,19 +1,23 @@
 # TASK-011 — Build Cost & POC Dashboard
 
-Status: todo  
+Status: done  
 Priority: medium  
 Epic: EPIC-006  
 Spec: SPEC-008
 
 ## Objective
-Implement this scoped capability according to the parent SPEC and accepted business rules.
+Build the Cost & POC dashboard: budget/committed/actual/forecast position,
+five distinct progress measures and the POC trend.
 
 ## Acceptance
-- [ ] Behaviour matches parent SPEC.
-- [ ] Relevant domain/data tests pass.
-- [ ] UI task includes browser/mobile evidence when applicable.
-- [ ] No real customer data.
-- [ ] Documentation updated if behaviour changed.
+- [x] Behaviour matches parent SPEC (all SPEC-008 cost fields; physical/claim/cert/POC/collection as distinct measures).
+- [x] Relevant domain/data tests pass (165/165).
+- [x] UI task includes browser/mobile evidence when applicable (scripts/qa-visual.mjs).
+- [x] No real customer data.
+- [x] Documentation updated if behaviour changed (CHANGELOG, PROJECT-STATUS).
 
 ## Evidence
-Pending.
+- 12 cost-position cards: Original/Revised Budget, Committed, Actual, Forecast, Cost To Complete, Variance, Recognised Revenue, Gross Profit, Margin, POC, transaction count.
+- Five distinct progress measures with BR-COST-001 note; cost by category; POC trend table.
+- Forecast overrun flagged on cost-overrun hero projects; committed reconciles to purchase orders.
+- Browser QA: 12 cost cards, 5 measure cards, POC trend rows, axe 0 violations, 0 console errors.

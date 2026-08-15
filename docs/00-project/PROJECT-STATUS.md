@@ -20,8 +20,9 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - CCAR certification (TASK-008): submitted vs certified with holds, remarks and negative-certification AR credit intent (147/147 tests)
 - Billing & AR credit flow (TASK-009): invoices, credit notes, receipts and allocations with settlement statuses (153/153 tests)
 - Procurement & subcontract demo (TASK-010): PO/award register and subcontract claim chain with verification (159/159 tests)
+- Cost & POC dashboard (TASK-011): cost position cards, five distinct progress measures and POC trend (165/165 tests)
 
 ## Next
-1. TASK-011 Cost & POC dashboard
-2. TASK-012 Documents & closeout
+1. TASK-012 Documents & closeout
+2. TASK-013 PWA offline & update UX
 3. TASK-014 Demo data integrity test suite

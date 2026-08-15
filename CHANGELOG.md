@@ -20,6 +20,7 @@
 - TASK-008: CCAR certification — submitted vs certified comparison (cumulative + per-cert increments), holds and remarks, negative certification with AR credit intent, finance queue hand-off.
 - TASK-009: billing & AR credit flow — AR document register (invoices vs credit notes), invoice receipts/allocations, credit-note application records, AR exposure summary and late-ar outstanding balances.
 - TASK-010: procurement & subcontract demo — PO/subcontract-award register with committed summary, subcontract claim chain with claimed-vs-certified verification, backcharge contras and on-hold claims.
+- TASK-011: cost & POC dashboard — budget/committed/actual/forecast position, variance and overrun flags, five distinct progress measures (BR-COST-001), cost by category and POC trend.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).
