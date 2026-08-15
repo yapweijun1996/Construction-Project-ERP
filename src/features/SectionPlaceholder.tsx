@@ -2,7 +2,10 @@ import type { AppSection } from '../app/sections'
 import StatusPill from '../ui/StatusPill'
 import { BUSINESS_STATUSES } from '../ui/statuses'
 
-export default function SectionPlaceholder({ section }: { section: AppSection }) {
+import { buildBaseline } from '../data/baseline'
+
+export default function SectionPlaceholder({ section, projectId }: { section: AppSection; projectId?: string }) {
+  const projectName = projectId ? buildBaseline().projects.find((p) => p.id === projectId)?.name : undefined
   return (
     <article className="section">
       <header className="section-header">
@@ -11,8 +14,13 @@ export default function SectionPlaceholder({ section }: { section: AppSection })
       </header>
       <div className="section-body">
         <p className="section-note">
-          This capability arrives in {section.task}. The current build is the TASK-001 app-shell
-          scaffold; all demo data stays synthetic and local.
+          {projectName ? (
+            <>
+              Selected project: <strong>{projectName}</strong>. This capability arrives in {section.task}.
+            </>
+          ) : (
+            <>Open a project from Overview to start working here. This capability arrives in {section.task}.</>
+          )}
         </p>
         {section.id === 'overview' && (
           <section aria-labelledby="status-heading" className="status-showcase">

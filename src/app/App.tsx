@@ -3,6 +3,7 @@ import AppShell from './AppShell'
 import { SECTIONS, sectionById } from './sections'
 import SectionPlaceholder from '../features/SectionPlaceholder'
 import PortfolioView from '../features/portfolio/PortfolioView'
+import ContractCommercialView from '../features/contracts/ContractCommercialView'
 
 function readHashSection(): string {
   const raw = window.location.hash.replace(/^#\/?/, '')
@@ -11,6 +12,7 @@ function readHashSection(): string {
 
 export default function App() {
   const [activeId, setActiveId] = useState<string>(readHashSection)
+  const [currentProjectId, setCurrentProjectId] = useState<string | null>(null)
 
   useEffect(() => {
     const onHashChange = () => setActiveId(readHashSection())
@@ -20,7 +22,13 @@ export default function App() {
 
   const active = sectionById(activeId) ?? SECTIONS[0]
 
-  const content = active.id === 'overview' ? <PortfolioView /> : <SectionPlaceholder section={active} />
+  const content = (() => {
+    if (active.id === 'overview') return <PortfolioView onOpenProject={setCurrentProjectId} />
+    if (active.id === 'contract-commercial' && currentProjectId) {
+      return <ContractCommercialView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    return <SectionPlaceholder section={active} projectId={currentProjectId ?? undefined} />
+  })()
 
   return (
     <AppShell sections={SECTIONS} activeId={active.id}>

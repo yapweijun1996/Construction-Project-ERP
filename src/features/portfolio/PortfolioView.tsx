@@ -32,7 +32,11 @@ interface Filters {
 
 const EMPTY_FILTERS: Filters = { status: 'all', year: 'all', type: 'all', client: 'all', scenario: 'all', band: 'all' }
 
-export default function PortfolioView() {
+interface Props {
+  onOpenProject?: (projectId: string) => void
+}
+
+export default function PortfolioView({ onOpenProject }: Props) {
   const ds = useMemo(() => buildBaseline(), [])
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS)
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -54,6 +58,11 @@ export default function PortfolioView() {
       return true
     })
   }, [ds, filters])
+
+  const openProject = (id: string) => {
+    setSelectedId(id)
+    onOpenProject?.(id)
+  }
 
   if (selectedId) {
     const project = ds.projects.find((p) => p.id === selectedId)
@@ -162,7 +171,7 @@ export default function PortfolioView() {
             {rows.map(({ project, kpis, client }) => (
               <tr key={project.id}>
                 <td>
-                  <button type="button" className="row-link" onClick={() => setSelectedId(project.id)}>
+                  <button type="button" className="row-link" onClick={() => openProject(project.id)}>
                     {project.code}
                   </button>
                 </td>

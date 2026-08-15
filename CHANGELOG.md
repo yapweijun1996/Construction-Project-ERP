@@ -14,6 +14,7 @@
 - TASK-003 (Part 3): AR, receipts/allocations, procurement and subcontract generation — CCAR→AR→receipt→credit-allocation→settlement chain, explicit AR credit application (BR-AR-003), late-ar hero, PO/subcontract orders, subcon claims with overclaim verification and backcharge contras.
 - TASK-003 (Part 4): cost transactions (10k+), POC snapshots (plan/actual, 5 distinct progress measures + forecast final cost), retention register, document register (SPEC-009 categories) and 3k+ audit events — full SPEC-001 target reconciliation green.
 - TASK-004: portfolio & workspace — filterable 30-project portfolio table (status/year/type/client/scenario/value band) and per-project workspace with 14 domain-computed KPIs; axe-clean responsive rendering.
+- TASK-005: contract & variation register — main contract summary, commercial change register (VO/Omission/Adjustment/Revised PO/Backcharge with signed values) and work-package register with explicit DO Required vs Progress Measurement evidence; app-level project context.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).

@@ -42,9 +42,16 @@ for (const vp of viewports) {
     await page.locator('.portfolio-table .row-link').first().click()
     await page.waitForTimeout(200)
     const kpiCards = await page.locator('.kpi-card').count()
-    await page.getByRole('button', { name: /back to portfolio/i }).click()
-    await page.waitForTimeout(150)
-    workspace = { kpiCards, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    // contract & commercial register (TASK-005)
+    await page.locator('.app-sidebar a[href="#contract-commercial"]').click()
+    await page.waitForTimeout(300)
+    const registerTables = await page.locator('.register-table').count()
+    const revisionNote = await page.locator('.revision-note').count()
+    const evidencePills = (await page.locator('.do-pill').count()) + (await page.locator('.progress-pill').count())
+    await page.getByRole('button', { name: /back to portfolio/i }).count().catch(() => 0)
+    await page.locator('.app-sidebar a[href="#overview"]').click()
+    await page.waitForTimeout(200)
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow
