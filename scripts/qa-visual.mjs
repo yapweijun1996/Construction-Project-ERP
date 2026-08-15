@@ -63,9 +63,16 @@ for (const vp of viewports) {
     await page.locator('.stepper button').nth(3).click()
     await page.waitForTimeout(150)
     const reviewFields = await page.locator('.contract-summary .kpi-card').count()
+    // certification (TASK-008)
+    await page.locator('.app-sidebar a[href="#certification"]').click()
+    await page.waitForTimeout(300)
+    const ccarRows = await page.locator('.register-table tbody tr').count()
+    await page.locator('.register-table .row-link').first().click()
+    await page.waitForTimeout(200)
+    const compareCards = await page.locator('.contract-summary .kpi-card').count()
     await page.locator('.app-sidebar a[href="#overview"]').click()
     await page.waitForTimeout(200)
-    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow
