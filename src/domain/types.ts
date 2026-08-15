@@ -217,6 +217,10 @@ export interface PocSnapshot {
   claimPct: number
   certPct: number
   collectedPct: number
+  /** Deterministic forecast final cost (SPEC-008). */
+  forecastFinalCost: number
+  /** 'plan' (month-open forecast snapshot) or 'actual' (month-end assessed). */
+  kind: 'plan' | 'actual'
 }
 
 export interface Retention {

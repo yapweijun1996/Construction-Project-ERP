@@ -1,6 +1,6 @@
 # TASK-003 — Generate 30-Project Portfolio
 
-Status: in progress  
+Status: done  
 Priority: urgent  
 Epic: EPIC-001  
 Spec: SPEC-001
@@ -11,11 +11,11 @@ engine, hitting the SPEC-001 transaction targets. Delivered in stages:
 1. Contracts / work packages / commercial changes (done — Part 1).
 2. Progress measurements + PCAR/CCAR (done — Part 2).
 3. AR / receipts / allocations + procurement / subcontracts (done — Part 3).
-4. Cost / POC / documents / audit + full target reconciliation.
+4. Cost / POC / documents / audit + full target reconciliation (done — Part 4).
 
 ## Acceptance
-- [ ] Behaviour matches parent SPEC (all transaction targets in SPEC-001).
-- [x] Relevant domain/data tests pass (95/95).
+- [x] Behaviour matches parent SPEC (every SPEC-001 transaction target verified in targets.test.ts).
+- [x] Relevant domain/data tests pass (109/109).
 - [x] UI task includes browser/mobile evidence when applicable (N/A — data task).
 - [x] No real customer data.
 - [x] Documentation updated if behaviour changed (CHANGELOG).
@@ -41,3 +41,10 @@ engine, hitting the SPEC-001 transaction targets. Delivered in stages:
 - BR-AR-003: existing credit applied via credit allocations — receipt allocations sum exactly to receipt amount; invoices never over-collected.
 - BR-AR-001: Issued / Partially Paid / Settled statuses coexist; late-ar projects keep unpaid invoices.
 - SPEC-007: certified <= claimed; subcon-overclaim verified down; backcharge contras negative; subcontract vendors are subcontractor parties.
+
+## Evidence (Part 4)
+- Cost transactions >= 10,000 (labour/material/equipment/subcontract/overheads), POC snapshots >= 500 (plan+actual), audit events >= 3,000.
+- POC snapshots track cost/physical/claim/cert/collection percentages plus forecast final cost as distinct measures (SPEC-008); BR-COST-001 verified — claim progress and accounting POC diverge.
+- cost-overrun hero: inflated forecast final cost; retention register: receivable matches accumulated claim retention, payable from subcontract certifications, release follows project status.
+- Document register covers SPEC-009 categories; every business action leaves an audit event.
+- targets.test.ts asserts every SPEC-001 band in one reconciliation test.

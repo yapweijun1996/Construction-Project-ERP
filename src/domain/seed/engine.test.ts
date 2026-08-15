@@ -49,13 +49,13 @@ describe('generateBaseline', () => {
     }
   })
 
-  it('keeps later transaction lists empty until their tasks fill them', () => {
+  it('generates every entity family of the baseline', () => {
     const ds = build()
-    expect(ds.costTransactions).toEqual([])
-    expect(ds.pocSnapshots).toEqual([])
-    expect(ds.retentions).toEqual([])
-    expect(ds.documents).toEqual([])
-    expect(ds.auditEvents).toEqual([])
+    expect(ds.costTransactions.length).toBeGreaterThan(0)
+    expect(ds.pocSnapshots.length).toBeGreaterThan(0)
+    expect(ds.retentions.length).toBeGreaterThan(0)
+    expect(ds.documents.length).toBeGreaterThan(0)
+    expect(ds.auditEvents.length).toBeGreaterThan(0)
   })
 
   it('generates contracts, work packages and commercial changes', () => {

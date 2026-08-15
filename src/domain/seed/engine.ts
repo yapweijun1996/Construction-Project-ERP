@@ -12,24 +12,18 @@
  * logic MUST bump ENGINE_VERSION (a baseline version change).
  */
 
-import type {
-  AuditEvent,
-  BaselineDataset,
-  CostTransaction,
-  DocumentRecord,
-  Party,
-  PocSnapshot,
-  Project,
-  Retention,
-} from '../types'
+import type { BaselineDataset, Party, Project } from '../types'
 import { parseSeedConfig, requiredTargets, type SeedConfig } from './config'
 import { Random, streamRng } from './prng'
 import { generateCommercial } from './generators/contracts'
 import { generateClaims } from './generators/claims'
 import { generateAr } from './generators/ar'
 import { generateProcurement } from './generators/procurement'
+import { generateCost } from './generators/cost'
+import { generateRetentions } from './generators/retention'
+import { generateDocumentsAndAudit } from './generators/documents'
 
-export const ENGINE_VERSION = '0.4.0'
+export const ENGINE_VERSION = '0.5.0'
 
 export interface RawClient {
   id: string
@@ -140,13 +134,6 @@ export function materializeProjects(stories: RawProjectStory[]): Project[] {
   }))
 }
 
-const EMPTY_LISTS = {
-  costTransactions: [] as CostTransaction[],
-  pocSnapshots: [] as PocSnapshot[],
-  retentions: [] as Retention[],
-  documents: [] as DocumentRecord[],
-  auditEvents: [] as AuditEvent[],
-}
 
 export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): BaselineDataset {
   const config = parseSeedConfig(rawConfig)
@@ -184,6 +171,42 @@ export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): B
     new Random(streamRng(config.seedVersion, config.seed, 'procurement')),
     new Random(streamRng(config.seedVersion, config.seed, 'subcon')),
   )
+  const cost = generateCost(
+    config,
+    projects,
+    procurement.purchaseOrders,
+    procurement.subcontracts,
+    procurement.subcontractClaims,
+    claims.progressMeasurements,
+    claims.claimHeaders,
+    claims.certifications,
+    ar.receipts,
+    new Random(streamRng(config.seedVersion, config.seed, 'cost')),
+    new Random(streamRng(config.seedVersion, config.seed, 'poc')),
+  )
+  const retentions = generateRetentions(
+    config,
+    projects,
+    claims.claimHeaders,
+    procurement.subcontracts,
+    procurement.subcontractClaims,
+    new Random(streamRng(config.seedVersion, config.seed, 'retention')),
+  )
+  const docs = generateDocumentsAndAudit(
+    config,
+    projects,
+    commercial.contracts,
+    commercial.commercialChanges,
+    claims.claimHeaders,
+    claims.certifications,
+    ar.arDocuments,
+    ar.receipts,
+    procurement.purchaseOrders,
+    procurement.subcontracts,
+    procurement.subcontractClaims,
+    retentions,
+    new Random(streamRng(config.seedVersion, config.seed, 'docs')),
+  )
 
   return {
     meta: {
@@ -206,7 +229,11 @@ export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): B
     purchaseOrders: procurement.purchaseOrders,
     subcontracts: procurement.subcontracts,
     subcontractClaims: procurement.subcontractClaims,
-    ...EMPTY_LISTS,
+    costTransactions: cost.costTransactions,
+    pocSnapshots: cost.pocSnapshots,
+    retentions,
+    documents: docs.documents,
+    auditEvents: docs.auditEvents,
   }
 }
 

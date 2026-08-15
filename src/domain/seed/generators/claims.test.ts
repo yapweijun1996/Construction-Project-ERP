@@ -182,7 +182,7 @@ describe('generateClaims — structure and keys', () => {
 })
 
 describe('engine meta', () => {
-  it('ENGINE_VERSION reflects the AR/procurement generation change', () => {
-    expect(ENGINE_VERSION).toBe('0.4.0')
+  it('ENGINE_VERSION reflects the full baseline generation', () => {
+    expect(ENGINE_VERSION).toBe('0.5.0')
   })
 })
