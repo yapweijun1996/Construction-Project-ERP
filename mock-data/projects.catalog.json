@@ -1,0 +1,510 @@
+[
+  {
+    "projectCode": "SG-2022-001",
+    "projectName": "Tuas Advanced Workshop Upgrade",
+    "projectType": "Industrial A&A",
+    "status": "Completed",
+    "startDate": "2022-01-10",
+    "plannedCompletionDate": "2022-11-30",
+    "originalContractValue": 1850000,
+    "currency": "SGD",
+    "clientName": "Meridian Advanced Manufacturing (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 7,
+    "retentionPct": 3,
+    "scenarios": [
+      "healthy",
+      "physical-material-mix"
+    ]
+  },
+  {
+    "projectCode": "SG-2022-002",
+    "projectName": "Jurong West Distribution Centre Fit-Out",
+    "projectType": "Warehouse / Fit-Out",
+    "status": "Completed",
+    "startDate": "2022-02-14",
+    "plannedCompletionDate": "2023-01-31",
+    "originalContractValue": 6200000,
+    "currency": "SGD",
+    "clientName": "Northbridge Data Systems (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 7,
+    "retentionPct": 5,
+    "scenarios": [
+      "healthy",
+      "retention"
+    ]
+  },
+  {
+    "projectCode": "SG-2022-003",
+    "projectName": "Seletar Aerospace Utility Upgrade",
+    "projectType": "Industrial M&E",
+    "status": "Completed",
+    "startDate": "2022-03-01",
+    "plannedCompletionDate": "2023-03-31",
+    "originalContractValue": 12800000,
+    "currency": "SGD",
+    "clientName": "Lioncrest Logistics (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 7,
+    "retentionPct": 5,
+    "scenarios": [
+      "vo-heavy",
+      "healthy"
+    ]
+  },
+  {
+    "projectCode": "SG-2022-004",
+    "projectName": "Kallang Office Reinstatement Programme",
+    "projectType": "Office Fit-Out",
+    "status": "Completed",
+    "startDate": "2022-05-05",
+    "plannedCompletionDate": "2022-12-15",
+    "originalContractValue": 980000,
+    "currency": "SGD",
+    "clientName": "Straits Biomedical Engineering (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 7,
+    "retentionPct": 3,
+    "scenarios": [
+      "small-works",
+      "milestone"
+    ]
+  },
+  {
+    "projectCode": "SG-2022-005",
+    "projectName": "Woodlands Food Production Extension",
+    "projectType": "Industrial Extension",
+    "status": "Completed",
+    "startDate": "2022-07-01",
+    "plannedCompletionDate": "2023-08-31",
+    "originalContractValue": 21400000,
+    "currency": "SGD",
+    "clientName": "Harbourview Commercial Holdings (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 7,
+    "retentionPct": 5,
+    "scenarios": [
+      "late-ar",
+      "retention"
+    ]
+  },
+  {
+    "projectCode": "SG-2023-001",
+    "projectName": "Changi Logistics Automation Hall",
+    "projectType": "Logistics",
+    "status": "Completed",
+    "startDate": "2023-01-16",
+    "plannedCompletionDate": "2024-04-30",
+    "originalContractValue": 16800000,
+    "currency": "SGD",
+    "clientName": "Vertex Research Facilities (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 8,
+    "retentionPct": 5,
+    "scenarios": [
+      "vo-heavy",
+      "physical-material-mix"
+    ]
+  },
+  {
+    "projectCode": "SG-2023-002",
+    "projectName": "One-North Laboratory Refurbishment",
+    "projectType": "Laboratory / Fit-Out",
+    "status": "Completed",
+    "startDate": "2023-02-01",
+    "plannedCompletionDate": "2024-01-31",
+    "originalContractValue": 8700000,
+    "currency": "SGD",
+    "clientName": "Orchid Precision Industries (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 8,
+    "retentionPct": 5,
+    "scenarios": [
+      "certification-gap",
+      "healthy"
+    ]
+  },
+  {
+    "projectCode": "SG-2023-003",
+    "projectName": "Tampines Commercial M&E Renewal",
+    "projectType": "Commercial M&E",
+    "status": "Completed",
+    "startDate": "2023-03-20",
+    "plannedCompletionDate": "2024-02-28",
+    "originalContractValue": 4900000,
+    "currency": "SGD",
+    "clientName": "Eastline Cold Chain (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 8,
+    "retentionPct": 3,
+    "scenarios": [
+      "healthy"
+    ]
+  },
+  {
+    "projectCode": "SG-2023-004",
+    "projectName": "Pioneer Clean Utility Upgrade",
+    "projectType": "Cleanroom / Utilities",
+    "status": "DLP",
+    "startDate": "2023-05-01",
+    "plannedCompletionDate": "2024-11-30",
+    "originalContractValue": 24800000,
+    "currency": "SGD",
+    "clientName": "Pioneer Process Technologies (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 8,
+    "retentionPct": 10,
+    "scenarios": [
+      "retention-heavy",
+      "final-account"
+    ]
+  },
+  {
+    "projectCode": "SG-2023-005",
+    "projectName": "Bukit Batok Data Hall Phase A",
+    "projectType": "Data Centre",
+    "status": "DLP",
+    "startDate": "2023-06-12",
+    "plannedCompletionDate": "2025-02-28",
+    "originalContractValue": 58500000,
+    "currency": "SGD",
+    "clientName": "Summit Digital Infrastructure (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 8,
+    "retentionPct": 5,
+    "scenarios": [
+      "vo-heavy",
+      "late-ar"
+    ]
+  },
+  {
+    "projectCode": "SG-2023-006",
+    "projectName": "Paya Lebar Retail Asset Enhancement",
+    "projectType": "Retail A&A",
+    "status": "DLP",
+    "startDate": "2023-09-01",
+    "plannedCompletionDate": "2025-01-31",
+    "originalContractValue": 9400000,
+    "currency": "SGD",
+    "clientName": "AeroWorks Support Services (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 8,
+    "retentionPct": 10,
+    "scenarios": [
+      "retention-heavy"
+    ]
+  },
+  {
+    "projectCode": "SG-2024-001",
+    "projectName": "Tuas Biomedical Process Expansion",
+    "projectType": "Biomedical / Industrial",
+    "status": "DLP",
+    "startDate": "2024-01-08",
+    "plannedCompletionDate": "2025-08-31",
+    "originalContractValue": 47200000,
+    "currency": "SGD",
+    "clientName": "GreenArc Energy Solutions (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "certification-gap",
+      "retention"
+    ]
+  },
+  {
+    "projectCode": "SG-2024-002",
+    "projectName": "Westport Advanced Logistics Hub",
+    "projectType": "Logistics / Warehouse",
+    "status": "Near Completion",
+    "startDate": "2024-03-01",
+    "plannedCompletionDate": "2026-02-28",
+    "originalContractValue": 42800000,
+    "currency": "SGD",
+    "clientName": "NovaLife Sciences (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "vo-heavy",
+      "margin-pressure",
+      "late-ar"
+    ]
+  },
+  {
+    "projectCode": "SG-2024-003",
+    "projectName": "Changi North Data Centre Fit-Out",
+    "projectType": "Data Centre",
+    "status": "Near Completion",
+    "startDate": "2024-04-15",
+    "plannedCompletionDate": "2026-03-31",
+    "originalContractValue": 76300000,
+    "currency": "SGD",
+    "clientName": "Westgate Automation Systems (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "healthy",
+      "subcon-overclaim"
+    ]
+  },
+  {
+    "projectCode": "SG-2024-004",
+    "projectName": "Jurong Island Utility Corridor Upgrade",
+    "projectType": "Infrastructure / Utilities",
+    "status": "Near Completion",
+    "startDate": "2024-06-01",
+    "plannedCompletionDate": "2026-05-31",
+    "originalContractValue": 33600000,
+    "currency": "SGD",
+    "clientName": "CivicPoint Assets (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "physical-material-mix",
+      "retention"
+    ]
+  },
+  {
+    "projectCode": "SG-2024-005",
+    "projectName": "Woodlands Electronics Factory A&A",
+    "projectType": "Industrial A&A",
+    "status": "Near Completion",
+    "startDate": "2024-07-15",
+    "plannedCompletionDate": "2026-04-30",
+    "originalContractValue": 19600000,
+    "currency": "SGD",
+    "clientName": "TidalWorks Industrial (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "negative-claim",
+      "revised-po"
+    ]
+  },
+  {
+    "projectCode": "SG-2024-006",
+    "projectName": "Kallang Integrated Office Fit-Out",
+    "projectType": "Office Fit-Out",
+    "status": "Final Account Dispute",
+    "startDate": "2024-08-01",
+    "plannedCompletionDate": "2025-12-31",
+    "originalContractValue": 11800000,
+    "currency": "SGD",
+    "clientName": "CoreAxis Property Services (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "final-account-dispute",
+      "certification-gap"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-001",
+    "projectName": "Tuas Green Manufacturing Campus",
+    "projectType": "Industrial Campus",
+    "status": "Active",
+    "startDate": "2025-01-06",
+    "plannedCompletionDate": "2027-06-30",
+    "originalContractValue": 128000000,
+    "currency": "SGD",
+    "clientName": "Skyline Innovation Campus (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "major-project",
+      "vo-heavy"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-002",
+    "projectName": "One-North Research Facility Phase 2",
+    "projectType": "Research / Laboratory",
+    "status": "Active",
+    "startDate": "2025-02-03",
+    "plannedCompletionDate": "2027-01-31",
+    "originalContractValue": 38600000,
+    "currency": "SGD",
+    "clientName": "Meridian Advanced Manufacturing (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "healthy",
+      "retention"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-003",
+    "projectName": "Changi Cold Chain Expansion",
+    "projectType": "Cold Chain / Logistics",
+    "status": "Active",
+    "startDate": "2025-03-10",
+    "plannedCompletionDate": "2026-11-30",
+    "originalContractValue": 22400000,
+    "currency": "SGD",
+    "clientName": "Northbridge Data Systems (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "physical-material-mix",
+      "late-ar"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-004",
+    "projectName": "Seletar Precision Engineering Extension",
+    "projectType": "Industrial Extension",
+    "status": "Active",
+    "startDate": "2025-04-01",
+    "plannedCompletionDate": "2027-03-31",
+    "originalContractValue": 31700000,
+    "currency": "SGD",
+    "clientName": "Lioncrest Logistics (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "healthy"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-005",
+    "projectName": "Jurong Digital Infrastructure Hall",
+    "projectType": "Data Centre",
+    "status": "At Risk",
+    "startDate": "2025-05-12",
+    "plannedCompletionDate": "2027-05-31",
+    "originalContractValue": 89400000,
+    "currency": "SGD",
+    "clientName": "Straits Biomedical Engineering (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "cost-overrun",
+      "delay",
+      "margin-pressure"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-006",
+    "projectName": "Tampines Regional Office Modernisation",
+    "projectType": "Office A&A",
+    "status": "Active",
+    "startDate": "2025-06-02",
+    "plannedCompletionDate": "2026-12-15",
+    "originalContractValue": 14500000,
+    "currency": "SGD",
+    "clientName": "Harbourview Commercial Holdings (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "certification-gap"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-007",
+    "projectName": "Pioneer Process Plant Upgrade",
+    "projectType": "Process / Industrial",
+    "status": "On Hold",
+    "startDate": "2025-07-01",
+    "plannedCompletionDate": "2027-02-28",
+    "originalContractValue": 26900000,
+    "currency": "SGD",
+    "clientName": "Vertex Research Facilities (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "on-hold",
+      "client-change"
+    ]
+  },
+  {
+    "projectCode": "SG-2025-008",
+    "projectName": "Woodlands High-Spec Warehouse",
+    "projectType": "Warehouse",
+    "status": "Active",
+    "startDate": "2025-08-18",
+    "plannedCompletionDate": "2027-04-30",
+    "originalContractValue": 35200000,
+    "currency": "SGD",
+    "clientName": "Orchid Precision Industries (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "subcon-overclaim",
+      "healthy"
+    ]
+  },
+  {
+    "projectCode": "SG-2026-001",
+    "projectName": "Changi Aviation Support Facility",
+    "projectType": "Aviation / Industrial",
+    "status": "Active",
+    "startDate": "2026-01-05",
+    "plannedCompletionDate": "2027-10-31",
+    "originalContractValue": 52800000,
+    "currency": "SGD",
+    "clientName": "Eastline Cold Chain (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "early-stage",
+      "vo-pending"
+    ]
+  },
+  {
+    "projectCode": "SG-2026-002",
+    "projectName": "Tuas Energy Efficiency Retrofit",
+    "projectType": "Energy / Retrofit",
+    "status": "Active",
+    "startDate": "2026-01-19",
+    "plannedCompletionDate": "2026-12-31",
+    "originalContractValue": 6800000,
+    "currency": "SGD",
+    "clientName": "Pioneer Process Technologies (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "milestone",
+      "healthy"
+    ]
+  },
+  {
+    "projectCode": "SG-2026-003",
+    "projectName": "Kallang Life Science Fit-Out",
+    "projectType": "Laboratory / Fit-Out",
+    "status": "Active",
+    "startDate": "2026-02-09",
+    "plannedCompletionDate": "2027-01-31",
+    "originalContractValue": 17400000,
+    "currency": "SGD",
+    "clientName": "Summit Digital Infrastructure (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "fast-track",
+      "certification-gap"
+    ]
+  },
+  {
+    "projectCode": "SG-2026-004",
+    "projectName": "Jurong West Automation Expansion",
+    "projectType": "Industrial Automation",
+    "status": "At Risk",
+    "startDate": "2026-03-02",
+    "plannedCompletionDate": "2027-08-31",
+    "originalContractValue": 29600000,
+    "currency": "SGD",
+    "clientName": "AeroWorks Support Services (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "cost-overrun",
+      "delay"
+    ]
+  },
+  {
+    "projectCode": "SG-2026-005",
+    "projectName": "One-North Corporate Campus A&A",
+    "projectType": "Commercial A&A",
+    "status": "Active",
+    "startDate": "2026-04-06",
+    "plannedCompletionDate": "2027-06-30",
+    "originalContractValue": 12300000,
+    "currency": "SGD",
+    "clientName": "GreenArc Energy Solutions (Demo) Pte. Ltd.",
+    "gstRateAtAwardPct": 9,
+    "retentionPct": 5,
+    "scenarios": [
+      "healthy",
+      "vo-pending"
+    ]
+  }
+]

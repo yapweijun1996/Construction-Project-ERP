@@ -1,0 +1,53 @@
+{
+  "seedVersion": "SG-DEMO-2026.1",
+  "demoCompany": "Meridian Build & Engineering (Demo) Pte. Ltd.",
+  "country": "Singapore",
+  "currency": "SGD",
+  "historyStart": "2022-01-01",
+  "historyEnd": "2026-08-15",
+  "deterministic": true,
+  "targets": {
+    "projects": 30,
+    "clientsMin": 15,
+    "vendorsSubcontractorsMin": 80,
+    "contractWorkPackageLines": [
+      800,
+      1500
+    ],
+    "commercialChanges": [
+      300,
+      500
+    ],
+    "progressMeasurements": [
+      500,
+      800
+    ],
+    "pcar": [
+      350,
+      500
+    ],
+    "ccar": [
+      300,
+      450
+    ],
+    "arDocuments": [
+      400,
+      600
+    ],
+    "receiptsAllocations": [
+      500,
+      800
+    ],
+    "purchaseSubcontractOrders": [
+      700,
+      1200
+    ],
+    "subcontractClaims": [
+      400,
+      700
+    ],
+    "costTransactionsMin": 10000,
+    "pocSnapshotsMin": 500,
+    "auditEventsMin": 3000
+  }
+}

@@ -1,0 +1,17 @@
+# TASK INDEX
+
+- TASK-001 — Scaffold Static PWA (EPIC-001 / SPEC-010)
+- TASK-002 — Implement Deterministic Seed Engine (EPIC-001 / SPEC-001)
+- TASK-003 — Generate 30-Project Portfolio (EPIC-001 / SPEC-001)
+- TASK-004 — Build Project Portfolio & Workspace (EPIC-001 / SPEC-002)
+- TASK-005 — Build Contract & Variation Register (EPIC-002 / SPEC-003)
+- TASK-006 — Build Progress Measurement Model (EPIC-003 / SPEC-004)
+- TASK-007 — Build PCAR Wizard (EPIC-003 / SPEC-004)
+- TASK-008 — Build CCAR Certification (EPIC-004 / SPEC-005)
+- TASK-009 — Build Billing & AR Credit Flow (EPIC-004 / SPEC-006)
+- TASK-010 — Build Procurement & Subcontract Demo (EPIC-005 / SPEC-007)
+- TASK-011 — Build Cost & POC Dashboard (EPIC-006 / SPEC-008)
+- TASK-012 — Build Documents & Closeout (EPIC-007 / SPEC-009)
+- TASK-013 — PWA Offline & Update UX (EPIC-001 / SPEC-010)
+- TASK-014 — Demo Data Integrity Test Suite (EPIC-001 / SPEC-001)
+- TASK-015 — Public Demo QA & GitHub Pages Release (EPIC-001 / SPEC-010)
