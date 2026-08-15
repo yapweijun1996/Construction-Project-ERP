@@ -13,8 +13,6 @@
  */
 
 import type {
-  Allocation,
-  ArDocument,
   AuditEvent,
   BaselineDataset,
   CostTransaction,
@@ -22,18 +20,16 @@ import type {
   Party,
   PocSnapshot,
   Project,
-  PurchaseOrder,
-  Receipt,
   Retention,
-  Subcontract,
-  SubcontractClaim,
 } from '../types'
 import { parseSeedConfig, requiredTargets, type SeedConfig } from './config'
 import { Random, streamRng } from './prng'
 import { generateCommercial } from './generators/contracts'
 import { generateClaims } from './generators/claims'
+import { generateAr } from './generators/ar'
+import { generateProcurement } from './generators/procurement'
 
-export const ENGINE_VERSION = '0.3.0'
+export const ENGINE_VERSION = '0.4.0'
 
 export interface RawClient {
   id: string
@@ -145,12 +141,6 @@ export function materializeProjects(stories: RawProjectStory[]): Project[] {
 }
 
 const EMPTY_LISTS = {
-  arDocuments: [] as ArDocument[],
-  receipts: [] as Receipt[],
-  allocations: [] as Allocation[],
-  purchaseOrders: [] as PurchaseOrder[],
-  subcontracts: [] as Subcontract[],
-  subcontractClaims: [] as SubcontractClaim[],
   costTransactions: [] as CostTransaction[],
   pocSnapshots: [] as PocSnapshot[],
   retentions: [] as Retention[],
@@ -180,6 +170,20 @@ export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): B
     new Random(streamRng(config.seedVersion, config.seed, 'pcar')),
     new Random(streamRng(config.seedVersion, config.seed, 'ccar')),
   )
+  const ar = generateAr(
+    config,
+    projects,
+    claims.claimHeaders,
+    claims.certifications,
+    new Random(streamRng(config.seedVersion, config.seed, 'ar')),
+  )
+  const procurement = generateProcurement(
+    config,
+    projects,
+    parties,
+    new Random(streamRng(config.seedVersion, config.seed, 'procurement')),
+    new Random(streamRng(config.seedVersion, config.seed, 'subcon')),
+  )
 
   return {
     meta: {
@@ -196,6 +200,12 @@ export function generateBaseline(rawConfig: unknown, catalogs: CatalogInputs): B
     claimHeaders: claims.claimHeaders,
     claimLines: claims.claimLines,
     certifications: claims.certifications,
+    arDocuments: ar.arDocuments,
+    receipts: ar.receipts,
+    allocations: ar.allocations,
+    purchaseOrders: procurement.purchaseOrders,
+    subcontracts: procurement.subcontracts,
+    subcontractClaims: procurement.subcontractClaims,
     ...EMPTY_LISTS,
   }
 }

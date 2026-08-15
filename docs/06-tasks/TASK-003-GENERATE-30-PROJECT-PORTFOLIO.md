@@ -10,12 +10,12 @@ Generate the full 30-project deterministic transaction baseline from the seed
 engine, hitting the SPEC-001 transaction targets. Delivered in stages:
 1. Contracts / work packages / commercial changes (done — Part 1).
 2. Progress measurements + PCAR/CCAR (done — Part 2).
-3. AR / receipts / allocations + procurement / subcontracts.
+3. AR / receipts / allocations + procurement / subcontracts (done — Part 3).
 4. Cost / POC / documents / audit + full target reconciliation.
 
 ## Acceptance
 - [ ] Behaviour matches parent SPEC (all transaction targets in SPEC-001).
-- [x] Relevant domain/data tests pass (73/73).
+- [x] Relevant domain/data tests pass (95/95).
 - [x] UI task includes browser/mobile evidence when applicable (N/A — data task).
 - [x] No real customer data.
 - [x] Documentation updated if behaviour changed (CHANGELOG).
@@ -34,3 +34,10 @@ engine, hitting the SPEC-001 transaction targets. Delivered in stages:
 - Negative-claim hero: re-measurement write-down produces a negative current claim followed by negative certification (ADR-008).
 - Certification-gap hero: fewer CCARs than PCARs; partial/on-hold certification present (BR-CERT-001).
 - GST by claim year: 7% (2022), 8% (2023), 9% (2024+).
+
+## Evidence (Part 3)
+- AR documents, receipts+allocations, purchase/subcontract orders and subcontract claims within SPEC-001 target bands.
+- AR amount equals its CCAR certification increment; credit notes negative; negative-certification projects receive explicit AR credits (ADR-008).
+- BR-AR-003: existing credit applied via credit allocations — receipt allocations sum exactly to receipt amount; invoices never over-collected.
+- BR-AR-001: Issued / Partially Paid / Settled statuses coexist; late-ar projects keep unpaid invoices.
+- SPEC-007: certified <= claimed; subcon-overclaim verified down; backcharge contras negative; subcontract vendors are subcontractor parties.

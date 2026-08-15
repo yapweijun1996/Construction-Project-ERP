@@ -119,7 +119,7 @@ describe('generateCommercial — determinism and ids', () => {
 })
 
 describe('engine meta', () => {
-  it('ENGINE_VERSION reflects the claim-cycle generation change', () => {
-    expect(ENGINE_VERSION).toBe('0.3.0')
+  it('ENGINE_VERSION reflects the AR/procurement generation change', () => {
+    expect(ENGINE_VERSION).toBe('0.4.0')
   })
 })
