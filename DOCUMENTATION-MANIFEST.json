@@ -3,7 +3,7 @@
   "packageVersion": "0.1.0",
   "createdDate": "2026-08-15",
   "purpose": "AI-agent-ready documentation, Singapore mock-data blueprint and app source",
-  "fileCount": 106,
+  "fileCount": 113,
   "files": [
     ".gitattributes",
     ".gitignore",
@@ -83,6 +83,7 @@
     "mock-data/clients.catalog.json",
     "mock-data/projects.catalog.json",
     "mock-data/seed-config.example.json",
+    "mock-data/seed-config.json",
     "mock-data/vendors.catalog.json",
     "package-lock.json",
     "package.json",
@@ -96,7 +97,15 @@
     "src/app/AppShell.tsx",
     "src/app/sections.ts",
     "src/data/README.md",
+    "src/data/loadCatalogs.ts",
     "src/domain/README.md",
+    "src/domain/seed/config.test.ts",
+    "src/domain/seed/config.ts",
+    "src/domain/seed/engine.test.ts",
+    "src/domain/seed/engine.ts",
+    "src/domain/seed/prng.test.ts",
+    "src/domain/seed/prng.ts",
+    "src/domain/types.ts",
     "src/features/SectionPlaceholder.tsx",
     "src/main.tsx",
     "src/pwa/README.md",
@@ -106,10 +115,8 @@
     "src/ui/StatusPill.tsx",
     "src/ui/statuses.ts",
     "tsconfig.app.json",
-    "tsconfig.app.tsbuildinfo",
     "tsconfig.json",
     "tsconfig.node.json",
-    "tsconfig.node.tsbuildinfo",
     "vite.config.ts"
   ]
 }

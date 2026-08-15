@@ -11,10 +11,10 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - Static local-first PWA direction
 - Initial epics/specs/tasks/ADRs
 - Vite + React + TypeScript PWA scaffold (TASK-001): responsive app shell (desktop/tablet/mobile), WCAG AA design tokens, business status vocabulary, Vitest suite, offline-capable build
+- Deterministic seed engine (TASK-002): mulberry32 PRNG streams, fail-closed config/catalog validation, baseline materialisation (102 parties, 30 projects) with byte-for-byte reproducibility
 
 ## Next
-1. TASK-002 Deterministic seed engine
-2. TASK-003 30-project seed portfolio
-3. TASK-004 Portfolio & project workspace
-4. TASK-005 Contract & variation register
-5. TASK-014 Demo data integrity test suite
+1. TASK-003 30-project seed portfolio
+2. TASK-004 Portfolio & project workspace
+3. TASK-005 Contract & variation register
+4. TASK-014 Demo data integrity test suite
