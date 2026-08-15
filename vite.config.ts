@@ -11,7 +11,10 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      // User-controlled updates: the app registers via virtual:pwa-register
+      // and shows an explicit update prompt (TASK-013).
+      registerType: 'prompt',
+      injectRegister: null,
       includeAssets: ['favicon.svg', 'icons/icon-192.svg', 'icons/icon-512.svg', 'icons/maskable-512.svg'],
       manifest: {
         name: 'Construction Project ERP',

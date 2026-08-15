@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useRegisterSW } from 'virtual:pwa-register/react'
 import AppShell from './AppShell'
 import { SECTIONS, sectionById } from './sections'
 import SectionPlaceholder from '../features/SectionPlaceholder'
 import PortfolioView from '../features/portfolio/PortfolioView'
+import UpdatePrompt from '../pwa/UpdatePrompt'
+import OfflineIndicator from '../pwa/OfflineIndicator'
 import ContractCommercialView from '../features/contracts/ContractCommercialView'
 import ProgressView from '../features/progress/ProgressView'
 import ClaimsView from '../features/claims/ClaimsView'
@@ -22,6 +25,7 @@ function readHashSection(): string {
 export default function App() {
   const [activeId, setActiveId] = useState<string>(readHashSection)
   const [currentProjectId, setCurrentProjectId] = useState<string | null>(null)
+  const { needRefresh, updateServiceWorker } = useRegisterSW()
 
   useEffect(() => {
     const onHashChange = () => setActiveId(readHashSection())
@@ -68,6 +72,8 @@ export default function App() {
 
   return (
     <AppShell sections={SECTIONS} activeId={active.id}>
+      <UpdatePrompt needRefresh={needRefresh[0]} onReload={() => updateServiceWorker(true)} />
+      <OfflineIndicator />
       {content}
     </AppShell>
   )

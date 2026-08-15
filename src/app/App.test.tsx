@@ -1,9 +1,17 @@
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
 
 import userEvent from '@testing-library/user-event'
 import App from './App'
 import { BUSINESS_STATUSES } from '../ui/statuses'
+
+vi.mock('virtual:pwa-register/react', () => ({
+  useRegisterSW: () => ({
+    needRefresh: [false, () => {}],
+    offlineReady: [false, () => {}],
+    updateServiceWorker: () => {},
+  }),
+}))
 
 afterEach(() => {
   window.location.hash = ''

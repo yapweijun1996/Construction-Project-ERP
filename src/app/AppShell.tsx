@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { PRIMARY_SECTION_IDS, type AppSection } from './sections'
+import SettingsDialog from '../features/settings/SettingsDialog'
 
 interface AppShellProps {
   sections: AppSection[]
@@ -10,6 +11,7 @@ interface AppShellProps {
 export default function AppShell({ sections, activeId, children }: AppShellProps) {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [moreOpen, setMoreOpen] = useState(false)
+  const [settingsOpen, setSettingsOpen] = useState(false)
 
   // Close overlays on Escape for keyboard users.
   useEffect(() => {
@@ -45,6 +47,14 @@ export default function AppShell({ sections, activeId, children }: AppShellProps
         </button>
         <span className="brand-mark" aria-hidden="true" />
         <span className="brand-title">Construction Project ERP</span>
+        <button
+          type="button"
+          className="settings-toggle"
+          aria-haspopup="dialog"
+          onClick={() => setSettingsOpen(true)}
+        >
+          Settings
+        </button>
       </header>
       <div className="app-layout">
         <aside
@@ -96,6 +106,7 @@ export default function AppShell({ sections, activeId, children }: AppShellProps
           <span aria-hidden="true">•••</span> More
         </button>
       </nav>
+      <SettingsDialog open={settingsOpen} onClose={() => setSettingsOpen(false)} />
       {moreOpen && (
         <div className="sheet-stack">
           <button

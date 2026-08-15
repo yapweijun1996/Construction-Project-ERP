@@ -97,9 +97,19 @@ for (const vp of viewports) {
     await page.locator('.app-sidebar a[href="#closeout"]').click()
     await page.waitForTimeout(300)
     const retentionRows = await page.locator('.register-table tbody tr').count()
+    // settings / demo reset (TASK-013)
+    await page.locator('.settings-toggle').click()
+    await page.waitForTimeout(200)
+    const settingsDialog = await page.getByRole('dialog', { name: /settings/i }).count()
+    const seedVersionVisible = await page.getByText('SG-DEMO-2026.1').count()
+    await page.getByRole('button', { name: /reset demo data/i }).click()
+    await page.waitForTimeout(150)
+    const resetAlert = await page.getByRole('alert').count()
+    await page.getByRole('button', { name: /^cancel$/i }).click()
+    await page.getByRole('button', { name: /^close$/i }).click()
     await page.locator('.app-sidebar a[href="#overview"]').click()
     await page.waitForTimeout(200)
-    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, subcontractRows, subclaimRows, costCards, measureCards, pocTrendRows, docRows, retentionRows, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, subcontractRows, subclaimRows, costCards, measureCards, pocTrendRows, docRows, retentionRows, settingsDialog, seedVersionVisible, resetAlert, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow
