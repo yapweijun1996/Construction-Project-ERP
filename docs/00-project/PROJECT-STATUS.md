@@ -15,8 +15,9 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - Full deterministic transaction baseline (TASK-003): contracts/WP/commercial changes, progress/PCAR/CCAR, AR/receipts/allocations, procurement/subcontract claims, cost/POC, retentions, documents and audit — every SPEC-001 target band verified (109/109 tests)
 - Portfolio & workspace UI (TASK-004): filterable 30-project table and per-project workspace with 14 domain-computed KPIs (124/124 tests, axe-clean)
 - Contract & variation register (TASK-005): main contract summary, commercial changes and work packages with explicit DO/measurement evidence (130/130 tests)
+- Progress measurement model (TASK-006): monthly plan/actual measurements with progress bars and latest WP progress (135/135 tests)
 
 ## Next
-1. TASK-006 Progress measurement model
-2. TASK-007 PCAR wizard
+1. TASK-007 PCAR wizard
+2. TASK-008 CCAR certification
 3. TASK-014 Demo data integrity test suite

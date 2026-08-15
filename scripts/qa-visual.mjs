@@ -48,10 +48,15 @@ for (const vp of viewports) {
     const registerTables = await page.locator('.register-table').count()
     const revisionNote = await page.locator('.revision-note').count()
     const evidencePills = (await page.locator('.do-pill').count()) + (await page.locator('.progress-pill').count())
+    // progress section (TASK-006)
+    await page.locator('.app-sidebar a[href="#progress"]').click()
+    await page.waitForTimeout(300)
+    const progressBars = await page.locator('progress').count()
+    const progressTables = await page.locator('.register-table').count()
     await page.getByRole('button', { name: /back to portfolio/i }).count().catch(() => 0)
     await page.locator('.app-sidebar a[href="#overview"]').click()
     await page.waitForTimeout(200)
-    workspace = { kpiCards, registerTables, revisionNote, evidencePills, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow

@@ -528,6 +528,35 @@ a {
   border: 0;
 }
 
+.kpi-small {
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+progress {
+  width: 120px;
+  height: 12px;
+  accent-color: var(--color-primary);
+}
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--color-border);
+}
+progress[value]::-webkit-progress-bar {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+progress[value]::-webkit-progress-value {
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+progress[value]::-moz-progress-bar {
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+
 /* ---- reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *,

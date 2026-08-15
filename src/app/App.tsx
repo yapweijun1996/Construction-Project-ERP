@@ -4,6 +4,7 @@ import { SECTIONS, sectionById } from './sections'
 import SectionPlaceholder from '../features/SectionPlaceholder'
 import PortfolioView from '../features/portfolio/PortfolioView'
 import ContractCommercialView from '../features/contracts/ContractCommercialView'
+import ProgressView from '../features/progress/ProgressView'
 
 function readHashSection(): string {
   const raw = window.location.hash.replace(/^#\/?/, '')
@@ -26,6 +27,9 @@ export default function App() {
     if (active.id === 'overview') return <PortfolioView onOpenProject={setCurrentProjectId} />
     if (active.id === 'contract-commercial' && currentProjectId) {
       return <ContractCommercialView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    if (active.id === 'progress' && currentProjectId) {
+      return <ProgressView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
     }
     return <SectionPlaceholder section={active} projectId={currentProjectId ?? undefined} />
   })()
