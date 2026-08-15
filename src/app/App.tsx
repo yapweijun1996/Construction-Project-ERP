@@ -8,6 +8,8 @@ import ProgressView from '../features/progress/ProgressView'
 import ClaimsView from '../features/claims/ClaimsView'
 import CertificationView from '../features/certification/CertificationView'
 import BillingArView from '../features/billing/BillingArView'
+import ProcurementView from '../features/procurement/ProcurementView'
+import SubcontractsView from '../features/procurement/SubcontractsView'
 
 function readHashSection(): string {
   const raw = window.location.hash.replace(/^#\/?/, '')
@@ -42,6 +44,12 @@ export default function App() {
     }
     if (active.id === 'billing-ar' && currentProjectId) {
       return <BillingArView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    if (active.id === 'procurement' && currentProjectId) {
+      return <ProcurementView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    if (active.id === 'subcontracts' && currentProjectId) {
+      return <SubcontractsView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
     }
     return <SectionPlaceholder section={active} projectId={currentProjectId ?? undefined} />
   })()

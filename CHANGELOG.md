@@ -19,6 +19,7 @@
 - TASK-007: PCAR wizard — five-step read-only claim review (Prelim/Work Done/Adjustments/Review/Submit) with SPEC-004 summary fields, work lines with prior/current % and movement, negative-claim highlighting and AR credit intent note.
 - TASK-008: CCAR certification — submitted vs certified comparison (cumulative + per-cert increments), holds and remarks, negative certification with AR credit intent, finance queue hand-off.
 - TASK-009: billing & AR credit flow — AR document register (invoices vs credit notes), invoice receipts/allocations, credit-note application records, AR exposure summary and late-ar outstanding balances.
+- TASK-010: procurement & subcontract demo — PO/subcontract-award register with committed summary, subcontract claim chain with claimed-vs-certified verification, backcharge contras and on-hold claims.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).

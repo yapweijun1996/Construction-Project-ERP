@@ -19,8 +19,9 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - PCAR wizard (TASK-007): five-step claim review with SPEC-004 summary and negative-claim highlighting (141/141 tests)
 - CCAR certification (TASK-008): submitted vs certified with holds, remarks and negative-certification AR credit intent (147/147 tests)
 - Billing & AR credit flow (TASK-009): invoices, credit notes, receipts and allocations with settlement statuses (153/153 tests)
+- Procurement & subcontract demo (TASK-010): PO/award register and subcontract claim chain with verification (159/159 tests)
 
 ## Next
-1. TASK-010 Procurement & subcontract demo
-2. TASK-011 Cost & POC dashboard
+1. TASK-011 Cost & POC dashboard
+2. TASK-012 Documents & closeout
 3. TASK-014 Demo data integrity test suite

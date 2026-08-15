@@ -77,9 +77,16 @@ for (const vp of viewports) {
     await page.locator('.register-table .row-link').first().click()
     await page.waitForTimeout(200)
     const arDetailHeadings = await page.locator('.section-body h2').count()
+    // subcontracts (TASK-010)
+    await page.locator('.app-sidebar a[href="#subcontracts"]').click()
+    await page.waitForTimeout(300)
+    const subcontractRows = await page.locator('.register-table tbody tr').count()
+    await page.locator('.register-table .row-link').first().click()
+    await page.waitForTimeout(200)
+    const subclaimRows = await page.locator('.register-table tbody tr').count()
     await page.locator('.app-sidebar a[href="#overview"]').click()
     await page.waitForTimeout(200)
-    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, subcontractRows, subclaimRows, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow
