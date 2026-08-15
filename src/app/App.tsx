@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import AppShell from './AppShell'
 import { SECTIONS, sectionById } from './sections'
 import SectionPlaceholder from '../features/SectionPlaceholder'
+import PortfolioView from '../features/portfolio/PortfolioView'
 
 function readHashSection(): string {
   const raw = window.location.hash.replace(/^#\/?/, '')
@@ -19,9 +20,11 @@ export default function App() {
 
   const active = sectionById(activeId) ?? SECTIONS[0]
 
+  const content = active.id === 'overview' ? <PortfolioView /> : <SectionPlaceholder section={active} />
+
   return (
     <AppShell sections={SECTIONS} activeId={active.id}>
-      <SectionPlaceholder section={active} />
+      {content}
     </AppShell>
   )
 }

@@ -35,6 +35,18 @@ for (const vp of viewports) {
   const statusPills = await page.locator('.status-pill').count()
   const skipLink = await page.locator('.skip-link').count()
 
+  // portfolio checks (TASK-004)
+  const tableRows = await page.locator('.portfolio-table tbody tr').count()
+  let workspace = null
+  if (vp.name === 'desktop') {
+    await page.locator('.portfolio-table .row-link').first().click()
+    await page.waitForTimeout(200)
+    const kpiCards = await page.locator('.kpi-card').count()
+    await page.getByRole('button', { name: /back to portfolio/i }).click()
+    await page.waitForTimeout(150)
+    workspace = { kpiCards, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+  }
+
   // mobile-only: more sheet flow
   let sheetOk = null
   if (vp.name === 'mobile') {
@@ -54,7 +66,7 @@ for (const vp of viewports) {
 
   report[vp.name] = {
     title, h1, navCount, bottomNavVisible, menuToggleVisible, statusPills, skipLink,
-    sheetOk, drawerOk,
+    sheetOk, drawerOk, tableRows, workspace,
     consoleErrors, pageErrors,
   }
   await page.close()

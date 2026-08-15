@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it } from 'vitest'
 import { render, screen, within } from '@testing-library/react'
+
 import userEvent from '@testing-library/user-event'
 import App from './App'
 import { BUSINESS_STATUSES } from '../ui/statuses'
@@ -21,8 +22,9 @@ describe('App shell (TASK-001)', () => {
 
   it('lists all ten business statuses on the overview', () => {
     render(<App />)
+    const list = screen.getByRole('list', { name: /business statuses/i })
     for (const s of BUSINESS_STATUSES) {
-      expect(screen.getByText(s)).toBeInTheDocument()
+      expect(within(list).getByText(s)).toBeInTheDocument()
     }
   })
 
