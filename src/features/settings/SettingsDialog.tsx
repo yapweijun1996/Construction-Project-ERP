@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { resetDemoData, seedInfo } from '../../data/demoStore'
 import { serializeBaseline } from '../../domain/seed/engine'
 import { buildBaseline } from '../../data/baseline'
+import { runIntegrityChecks, type IntegrityReport } from '../../domain/integrity'
 
 interface Props {
   open: boolean
@@ -18,6 +19,7 @@ interface Props {
 export default function SettingsDialog({ open, onClose }: Props) {
   const [confirming, setConfirming] = useState(false)
   const [done, setDone] = useState(false)
+  const [report, setReport] = useState<IntegrityReport | null>(null)
 
   if (!open) return null
 
@@ -36,6 +38,32 @@ export default function SettingsDialog({ open, onClose }: Props) {
       <button type="button" className="sheet-backdrop" aria-label="Close settings" onClick={onClose} />
       <div className="app-sheet settings-sheet" role="dialog" aria-modal="true" aria-label="Settings">
         <h2>Settings</h2>
+        <section aria-labelledby="integrity-heading" className="settings-section">
+          <h3 id="integrity-heading">Data Integrity</h3>
+          {!report && (
+            <button type="button" className="step-button" onClick={() => setReport(runIntegrityChecks(buildBaseline()))}>
+              Run Integrity Checks
+            </button>
+          )}
+          {report && (
+            <div aria-live="polite">
+              <p className={report.failCount === 0 ? 'section-note' : 'reset-confirm'} role="status">
+                {report.okCount} passed, {report.failCount} failed — engine {report.engineVersion} / seed{' '}
+                {report.seedVersion}
+              </p>
+              {report.failCount > 0 && (
+                <ul className="doc-list">
+                  {report.checks.filter((c) => c.status === 'fail').map((c) => (
+                    <li key={c.id}>
+                      <strong>{c.label}</strong>
+                      {c.detail ? ' — ' + c.detail : ''}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </section>
         <section aria-labelledby="demo-data-heading" className="settings-section">
           <h3 id="demo-data-heading">Demo Data</h3>
           <dl className="settings-list">

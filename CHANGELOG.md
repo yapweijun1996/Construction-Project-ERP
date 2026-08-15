@@ -23,6 +23,7 @@
 - TASK-011: cost & POC dashboard — budget/committed/actual/forecast position, variance and overrun flags, five distinct progress measures (BR-COST-001), cost by category and POC trend.
 - TASK-012: documents & closeout — document register with category filter and revisions, retention release status, defect list for DLP, final account and lifecycle closeout notes.
 - TASK-013: PWA offline & update UX — user-controlled service-worker update prompt (never auto-reloads), offline awareness banner, settings dialog with seed identity and two-step demo-data reset that recreates the byte-identical baseline.
+- TASK-014: demo data integrity suite — 40+ programmatic checks (ids/FKs/reconciliations/chain/allocation/cost-POC/hero/retention) with breakage-injection tests and a Settings integrity runner.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).

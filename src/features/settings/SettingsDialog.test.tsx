@@ -37,4 +37,12 @@ describe('SettingsDialog (TASK-013)', () => {
     await user.click(screen.getByRole('button', { name: /^cancel$/i }))
     expect(screen.queryByRole('alert')).not.toBeInTheDocument()
   })
+
+  it('runs the data integrity checks with a green report', async () => {
+    const user = userEvent.setup()
+    render(<SettingsDialog open onClose={() => {}} />)
+    await user.click(screen.getByRole('button', { name: /run integrity checks/i }))
+    expect(screen.getByRole('status')).toHaveTextContent(/0 failed/)
+    expect(screen.getByRole('status')).toHaveTextContent(/passed/)
+  })
 })
