@@ -21,6 +21,7 @@
 - TASK-009: billing & AR credit flow — AR document register (invoices vs credit notes), invoice receipts/allocations, credit-note application records, AR exposure summary and late-ar outstanding balances.
 - TASK-010: procurement & subcontract demo — PO/subcontract-award register with committed summary, subcontract claim chain with claimed-vs-certified verification, backcharge contras and on-hold claims.
 - TASK-011: cost & POC dashboard — budget/committed/actual/forecast position, variance and overrun flags, five distinct progress measures (BR-COST-001), cost by category and POC trend.
+- TASK-012: documents & closeout — document register with category filter and revisions, retention release status, defect list for DLP, final account and lifecycle closeout notes.
 
 ### Fixed
 - Mock catalogs now use stable internal IDs (`c-*`/`p-*`) with explicit `clientId` foreign keys (P3).

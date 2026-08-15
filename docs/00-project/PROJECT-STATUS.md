@@ -21,8 +21,9 @@ Current phase: **Phase 1 — Project Portfolio & Workspace** (TASK-001 done)
 - Billing & AR credit flow (TASK-009): invoices, credit notes, receipts and allocations with settlement statuses (153/153 tests)
 - Procurement & subcontract demo (TASK-010): PO/award register and subcontract claim chain with verification (159/159 tests)
 - Cost & POC dashboard (TASK-011): cost position cards, five distinct progress measures and POC trend (165/165 tests)
+- Documents & closeout (TASK-012): document register, retention release, defects and final account views (171/171 tests)
 
 ## Next
-1. TASK-012 Documents & closeout
-2. TASK-013 PWA offline & update UX
-3. TASK-014 Demo data integrity test suite
+1. TASK-013 PWA offline & update UX
+2. TASK-014 Demo data integrity test suite
+3. TASK-015 Public demo QA & GitHub Pages release

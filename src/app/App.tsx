@@ -11,6 +11,8 @@ import BillingArView from '../features/billing/BillingArView'
 import ProcurementView from '../features/procurement/ProcurementView'
 import SubcontractsView from '../features/procurement/SubcontractsView'
 import CostPocView from '../features/cost/CostPocView'
+import DocumentsView from '../features/documents/DocumentsView'
+import CloseoutView from '../features/documents/CloseoutView'
 
 function readHashSection(): string {
   const raw = window.location.hash.replace(/^#\/?/, '')
@@ -54,6 +56,12 @@ export default function App() {
     }
     if (active.id === 'cost-poc' && currentProjectId) {
       return <CostPocView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    if (active.id === 'documents' && currentProjectId) {
+      return <DocumentsView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
+    }
+    if (active.id === 'closeout' && currentProjectId) {
+      return <CloseoutView projectId={currentProjectId} onChangeProject={setCurrentProjectId} />
     }
     return <SectionPlaceholder section={active} projectId={currentProjectId ?? undefined} />
   })()

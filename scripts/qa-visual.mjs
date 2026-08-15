@@ -90,9 +90,16 @@ for (const vp of viewports) {
     const costCards = await page.locator('.kpi-grid .kpi-card').count()
     const measureCards = await page.locator('.contract-summary .kpi-card').count()
     const pocTrendRows = await page.locator('.register-table tbody tr').count()
+    // documents & closeout (TASK-012)
+    await page.locator('.app-sidebar a[href="#documents"]').click()
+    await page.waitForTimeout(300)
+    const docRows = await page.locator('.register-table tbody tr').count()
+    await page.locator('.app-sidebar a[href="#closeout"]').click()
+    await page.waitForTimeout(300)
+    const retentionRows = await page.locator('.register-table tbody tr').count()
     await page.locator('.app-sidebar a[href="#overview"]').click()
     await page.waitForTimeout(200)
-    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, subcontractRows, subclaimRows, costCards, measureCards, pocTrendRows, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
+    workspace = { kpiCards, registerTables, revisionNote, evidencePills, progressBars, progressTables, pcarRows, stepperSteps, reviewFields, ccarRows, compareCards, arRows, arDetailHeadings, subcontractRows, subclaimRows, costCards, measureCards, pocTrendRows, docRows, retentionRows, backWorks: (await page.locator('.portfolio-table tbody tr').count()) === 30 }
   }
 
   // mobile-only: more sheet flow
