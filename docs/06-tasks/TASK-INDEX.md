@@ -15,3 +15,6 @@
 - TASK-013 — PWA Offline & Update UX (EPIC-001 / SPEC-010)
 - TASK-014 — Demo Data Integrity Test Suite (EPIC-001 / SPEC-001)
 - TASK-015 — Public Demo QA & GitHub Pages Release (EPIC-001 / SPEC-010)
+- TASK-016 — Local Edit Layer for Commercial Changes (EPIC-002 / SPEC-003)
+- TASK-017 — Interactive Commercial Change Registration (EPIC-002 / SPEC-003)
+- TASK-018 — Work-Package Register Enhancements (EPIC-002 / SPEC-003)

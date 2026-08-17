@@ -7,7 +7,8 @@
 
 import { useState } from 'react'
 import { resetDemoData, seedInfo } from '../../data/demoStore'
-import { serializeBaseline } from '../../domain/seed/engine'
+import { generateBaseline, serializeBaseline } from '../../domain/seed/engine'
+import { loadCatalogs, loadSeedConfig } from '../../data/loadCatalogs'
 import { buildBaseline } from '../../data/baseline'
 import { runIntegrityChecks, type IntegrityReport } from '../../domain/integrity'
 
@@ -24,12 +25,14 @@ export default function SettingsDialog({ open, onClose }: Props) {
   if (!open) return null
 
   const info = seedInfo()
-  const before = serializeBaseline(buildBaseline())
+  void serializeBaseline(buildBaseline())
 
   const confirmReset = () => {
     resetDemoData()
     const after = serializeBaseline(buildBaseline())
-    setDone(after === before)
+    // success = the merged view is byte-identical to the pure seed baseline
+    const seed = serializeBaseline(generateBaseline(loadSeedConfig(), loadCatalogs()))
+    setDone(after === seed)
     setConfirming(false)
   }
 

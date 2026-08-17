@@ -3,6 +3,9 @@
 ## [Unreleased]
 
 ### Added
+- Phase 2 (TASK-016/017/018): local edit layer for commercial changes — user-registered VO/Omission/Adjustment/Revised PO/Backcharge persist in demo:edits, merge on read without mutating the seed baseline, adjust the contract summary live, are marked 'Local edit' and removable; work-package register gains fulfilment/evidence filters with a no-silent-edits guidance note. Reset restores the byte-identical baseline.
+
+### Added (baseline)
 - Initial project documentation package.
 - Project-first construction domain model.
 - Singapore five-year mock dataset blueprint.

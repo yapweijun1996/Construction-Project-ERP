@@ -7,9 +7,18 @@
  * (BR-CONTRACT-003): revisions are visible as adjustment entries.
  */
 
-import { useMemo } from 'react'
+import { useMemo, useState, type FormEvent } from 'react'
 import { buildBaseline } from '../../data/baseline'
 import { formatSgd } from '../../domain/kpis'
+import {
+  addLocalChange,
+  loadLocalEdits,
+  LocalEditError,
+  LOCAL_CHANGE_KINDS,
+  removeLocalChange,
+  saveLocalEdits,
+  type LocalChangeKind,
+} from '../../domain/edits'
 import StatusPill from '../../ui/StatusPill'
 
 interface Props {
@@ -22,11 +31,25 @@ function signed(value: number): string {
 }
 
 export default function ContractCommercialView({ projectId, onChangeProject }: Props) {
-  const ds = useMemo(() => buildBaseline(), [])
+  const [tick, setTick] = useState(0)
+  const [kind, setKind] = useState<LocalChangeKind>('VO')
+  const [description, setDescription] = useState('')
+  const [value, setValue] = useState('')
+  const [status, setStatus] = useState<'Approved' | 'Pending'>('Approved')
+  const [formError, setFormError] = useState<string | null>(null)
+  const [wpFulfilment, setWpFulfilment] = useState('all')
+  const [wpEvidence, setWpEvidence] = useState('all')
+  const ds = useMemo(() => buildBaseline(), [tick])
   const project = ds.projects.find((p) => p.id === projectId)
   const contract = ds.contracts.find((c) => c.projectId === projectId)
   const changes = ds.commercialChanges.filter((c) => c.projectId === projectId)
   const workPackages = ds.workPackages.filter((w) => w.contractId === contract?.id)
+  const visibleWorkPackages = workPackages.filter((w) => {
+    if (wpFulfilment !== 'all' && w.fulfilmentType !== wpFulfilment) return false
+    if (wpEvidence === 'do' && !w.doRequired) return false
+    if (wpEvidence === 'progress' && w.doRequired) return false
+    return true
+  })
 
   if (!project || !contract) {
     return <p className="section-note">Project not found.</p>
@@ -34,6 +57,40 @@ export default function ContractCommercialView({ projectId, onChangeProject }: P
 
   const approvedChanges = changes.filter((c) => c.status === 'Approved').reduce((a, c) => a + c.signedValue, 0)
   const adjusted = Math.round((contract.originalValue + approvedChanges) * 100) / 100
+
+  const negativeKind = kind === 'Omission' || kind === 'Backcharge'
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    setFormError(null)
+    const raw = Number(value)
+    if (!Number.isFinite(raw) || raw <= 0) {
+      setFormError('Enter a positive amount — Omission/Backcharge are recorded as negative automatically.')
+      return
+    }
+    const signedValue = negativeKind ? -Math.abs(raw) : Math.abs(raw)
+    try {
+      const store = addLocalChange(loadLocalEdits(), {
+        projectId,
+        contractId: contract.id,
+        kind,
+        description,
+        signedValue,
+        status,
+      })
+      saveLocalEdits(store)
+      setDescription('')
+      setValue('')
+      setTick((t) => t + 1)
+    } catch (err) {
+      setFormError(err instanceof LocalEditError ? err.message : String(err))
+    }
+  }
+
+  const handleRemove = (id: string) => {
+    saveLocalEdits(removeLocalChange(loadLocalEdits(), id))
+    setTick((t) => t + 1)
+  }
 
   return (
     <article className="section">
@@ -79,6 +136,36 @@ export default function ContractCommercialView({ projectId, onChangeProject }: P
         </p>
 
         <h2>Commercial Changes ({changes.length})</h2>
+        <form className="change-form" onSubmit={handleSubmit} aria-label="Register commercial change">
+          <label>
+            Kind
+            <select value={kind} onChange={(e) => setKind(e.target.value as LocalChangeKind)}>
+              {LOCAL_CHANGE_KINDS.map((k) => (
+                <option key={k} value={k}>{k}</option>
+              ))}
+            </select>
+          </label>
+          <label className="change-desc">
+            Description
+            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="e.g. Additional wall finishes" />
+          </label>
+          <label>
+            Value (SGD)
+            <input type="number" step="0.01" value={value} onChange={(e) => setValue(e.target.value)} />
+            {negativeKind && <span className="kpi-hint">recorded as negative</span>}
+          </label>
+          <label>
+            Status
+            <select value={status} onChange={(e) => setStatus(e.target.value as 'Approved' | 'Pending')}>
+              <option value="Approved">Approved</option>
+              <option value="Pending">Pending</option>
+            </select>
+          </label>
+          <button type="submit" className="step-button">Add Change</button>
+        </form>
+        {formError && (
+          <p className="reset-confirm" role="alert">{formError}</p>
+        )}
         <div className="table-scroll">
           <table className="register-table">
             <caption className="visually-hidden">Commercial changes for {project.code}</caption>
@@ -89,23 +176,59 @@ export default function ContractCommercialView({ projectId, onChangeProject }: P
                 <th scope="col">Description</th>
                 <th scope="col" className="num">Signed Value</th>
                 <th scope="col">Status</th>
+                <th scope="col">Source</th>
+                <th scope="col"><span className="visually-hidden">Actions</span></th>
               </tr>
             </thead>
             <tbody>
-              {changes.map((c) => (
-                <tr key={c.id}>
-                  <td>{c.code}</td>
-                  <td>{c.kind}</td>
-                  <td>{c.description}</td>
-                  <td className={'num ' + (c.signedValue < 0 ? 'delta-neg' : 'delta-pos')}>{signed(c.signedValue)}</td>
-                  <td><StatusPill status={c.status} /></td>
-                </tr>
-              ))}
+              {changes.map((c) => {
+                const isLocal = c.id.startsWith('ch-user-')
+                return (
+                  <tr key={c.id}>
+                    <td>{c.code}</td>
+                    <td>{c.kind}</td>
+                    <td>{c.description}</td>
+                    <td className={'num ' + (c.signedValue < 0 ? 'delta-neg' : 'delta-pos')}>{signed(c.signedValue)}</td>
+                    <td><StatusPill status={c.status} /></td>
+                    <td>{isLocal ? <span className="do-pill">Local edit</span> : <span className="progress-pill">Seed</span>}</td>
+                    <td>
+                      {isLocal && (
+                        <button type="button" className="row-link" onClick={() => handleRemove(c.id)}>
+                          Remove
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
 
-        <h2>Work Packages ({workPackages.length})</h2>
+        <h2>Work Packages ({visibleWorkPackages.length} of {workPackages.length})</h2>
+        <div className="filters" role="group" aria-label="Work package filters">
+          <label>
+            Fulfilment
+            <select value={wpFulfilment} onChange={(e) => setWpFulfilment(e.target.value)}>
+              <option value="all">All</option>
+              {[...new Set(workPackages.map((w) => w.fulfilmentType))].sort().map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            Evidence
+            <select value={wpEvidence} onChange={(e) => setWpEvidence(e.target.value)}>
+              <option value="all">All</option>
+              <option value="do">DO Required</option>
+              <option value="progress">Progress Measurement</option>
+            </select>
+          </label>
+        </div>
+        <p className="revision-note" role="note">
+          Work-package value changes are recorded as commercial adjustments in the change register above —
+          never silent edits to the package itself (BR-CONTRACT-003).
+        </p>
         <div className="table-scroll">
           <table className="register-table">
             <caption className="visually-hidden">Work packages for {project.code}</caption>
@@ -125,7 +248,7 @@ export default function ContractCommercialView({ projectId, onChangeProject }: P
               </tr>
             </thead>
             <tbody>
-              {workPackages.map((w) => (
+              {visibleWorkPackages.map((w) => (
                 <tr key={w.id}>
                   <td>{w.code}</td>
                   <td>{w.wbs}</td>

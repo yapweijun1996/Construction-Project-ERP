@@ -5,15 +5,20 @@
 
 import { loadCatalogs, loadSeedConfig } from './loadCatalogs'
 import { generateBaseline } from '../domain/seed/engine'
+import { applyLocalEdits, loadLocalEdits } from '../domain/edits'
 import type { BaselineDataset } from '../domain/types'
 
 let cached: BaselineDataset | null = null
 
+/**
+ * The merged view: immutable seed baseline plus local user edits
+ * (BR-CONTRACT-003 — edits append, never overwrite the baseline).
+ */
 export function buildBaseline(): BaselineDataset {
   if (!cached) {
     cached = generateBaseline(loadSeedConfig(), loadCatalogs())
   }
-  return cached
+  return applyLocalEdits(cached, loadLocalEdits())
 }
 
 /** Test helper: clears the cached baseline. */

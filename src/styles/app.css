@@ -713,6 +713,41 @@ progress[value]::-moz-progress-bar {
   border-radius: var(--radius-md);
 }
 
+.change-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.change-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.change-form input,
+.change-form select {
+  min-height: 44px;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  font: inherit;
+  color: var(--color-text);
+}
+.change-desc {
+  flex: 1 1 260px;
+}
+.change-desc input {
+  width: 100%;
+}
+
 /* ---- reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *,
